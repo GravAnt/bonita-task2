@@ -1,0 +1,6 @@
+,BLEU_Score
+mistral_few_shots,85.47
+mistral_zero_shot,73.0
+gpt_few_shots,89.7
+gpt_one_shot,89.72
+gpt_zero_shot,89.87

@@ -1,0 +1,4945 @@
+templates:
+  adversarial_qa_dbert_answer_the_following_q: !Template
+    answer_choices: null
+    id: a64d5a15-68e2-4d1c-b30a-ca8250c860fa
+    jinja: "{% if metadata.split != \"test\" %}\r\nDato il seguente passaggio\r\n\r\
+      \n\"{{context}}\",\r\n\r\nrispondi alla seguente domanda. Nota che la risposta\
+      \ \xE8 presente nel testo.\r\n\r\nDomanda: {{question}} |||\r\n{{answers.text\
+      \ | choice}}\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_following_q
+    reference: 'Input: QC, Output: Answer'
+  adversarial_qa_dbert_based_on: !Template
+    answer_choices: null
+    id: a0872cde-2f19-4ae6-919a-868da47bfbca
+    jinja: "{% if metadata.split != \"test\" %}\r\nEstrai la risposta alla domanda\
+      \ dal seguente contesto.\r\nDomanda: {{question}}\r\nContesto: {{context}}|||\r\
+      \n{{answers.text | choice}}\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: based_on
+    reference: ''
+  adversarial_qa_dbert_generate_question: !Template
+    answer_choices: null
+    id: 00755780-f3c0-44b4-b159-8f3873cdb16a
+    jinja: "Voglio testare l'abilit\xE0 degli studenti di leggere un passaggio e rispondere\
+      \ a domande su di esso. Potresti per favore formulare una buona domanda per\
+      \ il passaggio \"{{context}}\"? |||\r\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: 'Input: Context, Output: Question (generate a question)'
+  adversarial_qa_dbert_question_context_answer: !Template
+    answer_choices: null
+    id: 5bdb1815-5c6f-49a3-ad1d-36734442070a
+    jinja: "{% if metadata.split != \"test\" %}\r\nDomanda: \"{{question}}\"\r\n\r\
+      \nContesto: \"{{context}}\"\r\n\r\nRisposta:\r\n|||\r\n{{answers.text | choice}}\r\
+      \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: question_context_answer
+    reference: 'Input: QC, Output: Answer (short form)'
+  adversarial_qa_dbert_tell_what_it_is: !Template
+    answer_choices: null
+    id: 3b2459cc-6600-443c-abf8-8f60c34cd99a
+    jinja: "{% if metadata.split != \"test\" %}\r\nSo che la risposta alla domanda\
+      \ \"{{question}}\" \xE8 in \"{{context}}\". Puoi dirmi qual \xE8? |||\r\n\r\n\
+      {{answers.text | choice}}\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: tell_what_it_is
+    reference: 'Input: QC, Output: A (rephrase)'
+  adversarial_qa_dbidaf_answer_the_following_q: !Template
+    answer_choices: null
+    id: a64d5a15-68e2-4d1c-b30a-ca8250c860d9
+    jinja: "{% if metadata.split != \"test\" %}\r\nDato il seguente passaggio\r\n\r\
+      \n\"{{context}}\",\r\n\r\nrispondi alla seguente domanda. Nota che la risposta\
+      \ \xE8 presente nel testo.\r\n\r\nDomanda: {{question}} |||\r\n{{answers.text\
+      \ | choice}}\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_following_q
+    reference: 'Input: QC, Output: Answer'
+  adversarial_qa_dbidaf_based_on: !Template
+    answer_choices: null
+    id: 41f28b31-d0fc-4f20-a0a2-ff21813e298e
+    jinja: "{% if metadata.split != \"test\" %}\r\nEstrai la risposta alla domanda\
+      \ dal seguente contesto.\r\nDomanda: {{question}}\r\nContesto: {{context}}|||\r\
+      \n{{answers.text | choice}}\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: based_on
+    reference: ''
+  adversarial_qa_dbidaf_generate_question: !Template
+    answer_choices: null
+    id: c7a80603-d610-4999-98a7-815b2f84592d
+    jinja: "Voglio testare l'abilit\xE0 degli studenti di leggere un passaggio e rispondere\
+      \ a domande su di esso. Potresti per favore formulare una buona domanda per\
+      \ il passaggio \"{{context}}\"? |||\r\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: 'Input: Context, Output: Question (generate a question)'
+  adversarial_qa_dbidaf_question_context_answer: !Template
+    answer_choices: null
+    id: fa185424-6ebe-49b8-b4ed-7632ca33c361
+    jinja: "{% if metadata.split != \"test\" %}\r\nDomanda: \"{{question}}\"\r\n\r\
+      \nContesto: \"{{context}}\"\r\n\r\nRisposta:\r\n|||\r\n{{answers.text | choice}}\r\
+      \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: question_context_answer
+    reference: 'Input: QC, Output: Answer (short form)'
+  adversarial_qa_dbidaf_tell_what_it_is: !Template
+    answer_choices: null
+    id: ce9bc00a-567b-4c4e-aad7-df6f5d5d57bb
+    jinja: "{% if metadata.split != \"test\" %}\r\nSo che la risposta alla domanda\
+      \ \"{{question}}\" \xE8 in \"{{context}}\". Puoi dirmi qual \xE8? |||\r\n\r\n\
+      {{answers.text | choice}}\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: tell_what_it_is
+    reference: 'Input: QC, Output: A (rephrase)'
+  adversarial_qa_droberta_answer_the_following_q: !Template
+    answer_choices: null
+    id: a64d5a15-68e2-4d1c-b30a-ca8250c860f3
+    jinja: "{% if metadata.split != \"test\" %}\r\nDato il seguente passaggio\r\n\r\
+      \n\"{{context}}\",\r\n\r\nrispondi alla seguente domanda. Nota che la risposta\
+      \ \xE8 presente nel testo.\r\n\r\nDomanda: {{question}} |||\r\n{{answers.text\
+      \ | choice}}\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_following_q
+    reference: 'Input: QC, Output: Answer'
+  adversarial_qa_droberta_based_on: !Template
+    answer_choices: null
+    id: a0872cde-2f19-4ae6-919a-868da47bfbc3
+    jinja: "{% if metadata.split != \"test\" %}\r\nEstrai la risposta alla domanda\
+      \ dal seguente contesto.\r\nDomanda: {{question}}\r\nContesto: {{context}}|||\r\
+      \n{{answers.text | choice}}\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: based_on
+    reference: ''
+  adversarial_qa_droberta_generate_question: !Template
+    answer_choices: null
+    id: 00755780-f3c0-44b4-b159-8f3873cdb163
+    jinja: "Voglio testare l'abilit\xE0 degli studenti di leggere un passaggio e rispondere\
+      \ a domande su di esso. Potresti per favore formulare una buona domanda per\
+      \ il passaggio \"{{context}}\"? |||\r\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: 'Input: Context, Output: Question (generate a question)'
+  adversarial_qa_droberta_question_context_answer: !Template
+    answer_choices: null
+    id: 5bdb1815-5c6f-49a3-ad1d-367344420703
+    jinja: "{% if metadata.split != \"test\" %}\r\nDomanda: \"{{question}}\"\r\n\r\
+      \nContesto: \"{{context}}\"\r\n\r\nRisposta:\r\n|||\r\n{{answers.text | choice}}\r\
+      \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: question_context_answer
+    reference: 'Input: QC, Output: Answer (short form)'
+  adversarial_qa_droberta_tell_what_it_is: !Template
+    answer_choices: null
+    id: 3b2459cc-6600-443c-abf8-8f60c34cd993
+    jinja: "{% if metadata.split != \"test\" %}\r\nSo che la risposta alla domanda\
+      \ \"{{question}}\" \xE8 in \"{{context}}\". Puoi dirmi qual \xE8? |||\r\n\r\n\
+      {{answers.text | choice}}\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: tell_what_it_is
+    reference: 'Input: QC, Output: A (rephrase)'
+  ag_news_classify: !Template
+    answer_choices: World politics ||| Sports ||| Business ||| Science and technology
+    id: cb355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "\r\n{{text}} \r\n\r\nQuale etichetta descrive meglio questo articolo di\
+      \ cronaca? ||| \r\n\r\n{{answer_choices[label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify
+    reference: ''
+  ag_news_classify_question_first: !Template
+    answer_choices: World politics ||| Sports ||| Business ||| Science and technology
+    id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
+    jinja: "\r\nQuale etichetta descrive meglio questo articolo di cronaca?\r\n\r\n\
+      {{text}} ||| \r\n\r\n{{answer_choices[label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_question_first
+    reference: ''
+  ag_news_classify_with_choices: !Template
+    answer_choices: World politics ||| Sports ||| Business ||| Science and technology
+    id: b401b0ee-6ffe-4a91-8e15-77ee073cd858
+    jinja: "\r\n{{text}} \r\n\r\nQuesto articolo riguarda {{\"politica mondiale, sport,\
+      \ business, o scienza e tecnologia\"}}? ||| \r\n\r\n{{answer_choices[label]\
+      \ }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices
+    reference: ''
+  ag_news_classify_with_choices_question_first: !Template
+    answer_choices: World politics ||| Sports ||| Business ||| Science and technology
+    id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
+    jinja: "\r\nQuesto \xC3\xA8 un articolo di cronaca che riguarda {{\"politica mondiale,\
+      \ sport, business, o scienza e tecnologia\"}}?\r\n\r\n{{text}} \r\n\r\n||| \r\
+      \n\r\n{{answer_choices[label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: classify_with_choices_question_first
+    reference: ''
+  ag_news_recommend: !Template
+    answer_choices: Politician ||| Athlete ||| Business executive ||| Scientist
+    id: 918267e0-af68-4117-892d-2dbe66a58ce9
+    jinja: "\r\nRaccomanderesti il seguente articolo ad un {{\"politico\"}}, un {{\"\
+      atleta\"}}, un {{\"dirigente\"}}, o uno {{\"scienziato\"}}?\r\n\r\n\r\n\r\n\
+      {{ text }}\r\n\r\n|||\r\n\r\n{{answer_choices[label]}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: recommend
+    reference: ''
+  ag_news_which_section: !Template
+    answer_choices: World News ||| Sports ||| Business ||| Science and Technology
+    id: 98534347-fff7-4c39-a795-4e69a44791f7
+    jinja: "\r\n{{text}} \r\n\r\n\r\n\r\nIn quale delle sezioni di un giornale qui\
+      \ sotto \xC3\xA8 probabile che questo articolo appaia? ||| \r\n\r\n{{answer_choices[label]\
+      \ }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section
+    reference: ''
+  ag_news_which_section_choices: !Template
+    answer_choices: World News ||| Sports ||| Business ||| Science and Technology
+    id: 9345df33-4f23-4944-a33c-eef94e626862
+    jinja: "\r\n{{text}} \r\n\r\n\r\n\r\nIn quale delle sezioni di un giornale qui\
+      \ sotto \xC3\xA8 probabile che questo articolo appaia? {{\"World News\"}}, {{\"\
+      Sports\"}}, {{\"Business\"}}, o {{\"Science and Technology\"}}? ||| \r\n\r\n\
+      {{answer_choices[label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: which_section_choices
+    reference: ''
+  amazon_polarity_Is_this_product_review_positive: !Template
+    answer_choices: No ||| Yes
+    id: 592caf8f-f8ff-426a-a61b-b7e95ed510b6
+    jinja: "\r\nLa recensione del prodotto \xC3\xA8 positiva?\r\nTitolo: {{title}}\r\
+      \nRecensione: {{content}}\r\nRisposta: |||\r\n{{answer_choices[label]}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_product_review_positive
+    reference: ''
+  amazon_polarity_Is_this_review: !Template
+    answer_choices: Negative ||| Positive
+    id: 1e90a24a-1182-43dd-9445-22f2e56e5761
+    jinja: "\r\nTitolo: {{title}}\r\nRecensione: {{content}}\r\nLa recensione \xC3\
+      \xA8 positiva o negativa? |||\r\n{{answer_choices[label]}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review
+    reference: ''
+  amazon_polarity_Is_this_review_negative: !Template
+    answer_choices: Yes ||| No
+    id: 745b9c05-10df-4a7e-81ad-1b88cefcb166
+    jinja: "\r\nTitolo: {{title}}\r\nRecensione: {{content}}\r\nLa recensione di questo\
+      \ prodotto \xC3\xA8 negativa?|||\r\n{{answer_choices[label]}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Is_this_review_negative
+    reference: ''
+  amazon_polarity_User_recommend_this_product: !Template
+    answer_choices: No ||| Yes
+    id: 3a48f287-6a4b-4df0-ab2d-2eaf6cb8e53d
+    jinja: "\r\nBasandoti sulla recensione, l'utente sta raccomandando il prodotto?\r\
+      \n===\r\nRecensione: {{content}}\r\nRisposta: |||\r\n{{answer_choices[label]}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: User_recommend_this_product
+    reference: 'Reformulation equivalent to sent analysis: would the user recommend
+      this product?'
+  amazon_polarity_convey_negative_or_positive_sentiment: !Template
+    answer_choices: Negative ||| Positive
+    id: 8abb5377-5dd3-4402-92a5-0d81adb6a325
+    jinja: "\r\nTitolo: {{title}}\r\nRecensione: {{content}}\r\nLa recensione di questo\
+      \ prodotto trasmette un'emozione positiva o negativa?|||\r\n{{answer_choices[label]}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: convey_negative_or_positive_sentiment
+    reference: ''
+  amazon_polarity_flattering_or_not: !Template
+    answer_choices: unflattering ||| flattering
+    id: b13369e8-0500-4e93-90d4-8e6814bfb99b
+    jinja: "\r\nTitolo: {{title}}\r\nRecensione del prodotto: {{content}}\r\nDiresti\
+      \ che questa recensione descriva il prodotto in modo {{answer_choices[1]}} oo\
+      \ {{answer_choices[0]}} ?\r\n|||\r\n{{answer_choices[label]}} \r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: flattering_or_not
+    reference: ''
+  amazon_polarity_negative_or_positive_tone: !Template
+    answer_choices: Negative ||| Positive
+    id: 9df70cdf-f8ed-4e79-8e2f-b4668058d637
+    jinja: "\r\nIn questa recensione del prodotto \xC3\xA8 presente un tono positivo\
+      \ o negativo?\r\n===\r\nTitolo: {{title}}\r\nRecensione: {{content}}\r\nRisposta:\
+      \ |||\r\n{{answer_choices[label]}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: negative_or_positive_tone
+    reference: ''
+  amazon_polarity_user_satisfied: !Template
+    answer_choices: dissatisfied ||| satisfied
+    id: b13369e8-0500-4e93-90d4-8e6814bfb97b
+    jinja: "\r\nEcco una recensione lasciata da un acquirente su un prodotto. Ritieni\
+      \ che sia {{answer_choices[1]}} o {{answer_choices[0]}}?\r\nTitolo: {{title}}\r\
+      \nRecensione: {{content}}\r\n|||\r\n{{answer_choices[label]}} \r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: user_satisfied
+    reference: ''
+  amazon_polarity_would_you_buy: !Template
+    answer_choices: decrease ||| increase
+    id: b13369e8-0500-4e93-90d4-8e6814bfb98b
+    jinja: "\r\nStai considerando se acquistare un prodotto. Guardi alle recensioni.\
+      \ La seguente recensione {{answer_choices[0]}} o {{answer_choices[1]}} la possibilit\xC3\
+      \_ che tu acquisti il prodotto?\r\nTitolo della recensione: {{title}}\r\nRecensione\
+      \ del prodotto: {{content}}\r\n|||\r\n{{answer_choices[label]}} \r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: would_you_buy
+    reference: ''
+  anli_GPT-3 style: !Template
+    answer_choices: True ||| Neither ||| False
+    id: 620aa3fc-d5eb-46f5-a1ee-4c754527aa97
+    jinja: "\r\n{{premise}}\r\n\r\nDomanda: {{hypothesis}} Vero, Falso, o nessuno\
+      \ dei due? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3 style
+    reference: 'Same as reported in Figure G7 of the GPT-3 paper, except that there
+      is no task identifying tokens like "anli R1: ".'
+  anli_MNLI crowdsource: !Template
+    answer_choices: Correct ||| Inconclusive ||| Incorrect
+    id: 0cc3ae39-3997-4686-8c93-5d51457efa1f
+    jinja: "\r\n{{premise}} Usando solo la descrizione qui sopra e ci\xC3\xB2  che\
+      \ sai riguardo al mondo, \"{{hypothesis}}\" \xC3\xA8 sicuramente corretta, non\
+      \ corretta, o inconclusiva? ||| {% if label !=-1 %}{{ answer_choices[label]\
+      \ }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: MNLI crowdsource
+    reference: Adapted from Williams et al. 2018's instructions to crowdsourcing workers.
+  anli_always/sometimes/never: !Template
+    answer_choices: Always ||| Sometimes ||| Never
+    id: dbc68425-5c42-43ae-9748-70ce8c5a167e
+    jinja: "\r\nSupponi che sia vero {{premise}} Allora, \"{{hypothesis}}\" \xC3\xA8\
+      \ {{\"sempre\"}} vero, \xC3\xA8 vero {{\"a volte\"}}, o non \xC3\xA8 {{\"mai\"\
+      }} vero? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: always/sometimes/never
+    reference: Sanh et al. 2021
+  anli_based on the previous passage: !Template
+    answer_choices: Yes ||| Maybe ||| No
+    id: 9b613182-c6ab-4427-9221-3d68f6d62765
+    jinja: "\r\n{{premise}} Basandosi sul passaggio precedente, \xC3\xA8 vero che\
+      \ \"{{hypothesis}}\"? S\xC3\xAC, no, o forse? ||| {% if label !=-1 %}{{ answer_choices[label]\
+      \ }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based on the previous passage
+    reference: "Adapted from the BoolQ prompts in Schick & Sch\xFCtze 2021."
+  anli_can we infer: !Template
+    answer_choices: Yes ||| Maybe ||| No
+    id: c4ed37ae-d7d7-4197-a725-ef2152fa3b1f
+    jinja: "\r\nSupponi {{premise}} Si pu\xC3\xB2 concludere che \"{{hypothesis}}\"\
+      ? S\xC3\xAC, no, o forse? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %} \r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: can we infer
+    reference: Webson & Pavlick 2021
+  anli_claim true/false/inconclusive: !Template
+    answer_choices: True ||| Inconclusive ||| False
+    id: ec249357-e672-4e7d-b8b6-d97ed7d090c5
+    jinja: "\r\n{{premise}} Basandosi su questa informazione, possiamo affermare che\
+      \ \xC3\xA8: \"{{hypothesis}}\" {{\"vero\"}}, {{\"falso\"}}, o {{\"inconclusivo\"\
+      }}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: claim true/false/inconclusive
+    reference: Sanh et al. 2021
+  anli_consider always/sometimes/never: !Template
+    answer_choices: Always ||| Sometimes ||| Never
+    id: e6f32b9c-7e0b-474a-a0d2-e84d20c22aba
+    jinja: "\r\n{{premise}} \r\n\r\n\r\n\r\nTenendo in considerazione il testo qui\
+      \ sopra, considera: {{hypothesis}} \xC3\u02C6 {{\"sempre\"}} corretto, lo \xC3\
+      \xA8 {{\"a volte\"}}, o non lo \xC3\xA8 {{\"mai\"}}? ||| {% if label !=-1 %}{{\
+      \ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: consider always/sometimes/never
+    reference: Sanh et al. 2021
+  anli_does it follow that: !Template
+    answer_choices: Yes ||| Maybe ||| No
+    id: 5459237b-97de-4340-bf7b-2939c3f7ca19
+    jinja: "\r\nDato che {{premise}} Segue che {{hypothesis}} S\xC3\xAC, no, o forse?\
+      \ ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does it follow that
+    reference: Sanh et al. 2021
+  anli_does this imply: !Template
+    answer_choices: Yes ||| Maybe ||| No
+    id: e5b7fdd7-fdff-4630-889b-3c7a052e5da0
+    jinja: "\r\n{{premise}} \r\n\r\n\r\n\r\nDomanda: Implica che \"{{hypothesis}}\"\
+      ? S\xC3\xAC, no, o forse? ||| {% if label !=-1 %}{{answer_choices[label]}}{%\
+      \ endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does this imply
+    reference: Sanh et al. 2021
+  anli_guaranteed true: !Template
+    answer_choices: Yes ||| Maybe ||| No
+    id: ffa0a6f0-7186-4ccb-bb35-8b1affb747a0
+    jinja: "\r\nDato {{premise}} \xC3\u02C6 sicuramente vero che \"{{hypothesis}}\"\
+      ? S\xC3\xAC, no, o forse? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: guaranteed true
+    reference: Webson & Pavlick 2021
+  anli_guaranteed/possible/impossible: !Template
+    answer_choices: Guaranteed ||| Possible ||| Impossible
+    id: ca24b93a-6265-462f-b140-e329c03d94fa
+    jinja: "\r\nAssumi che sia vero {{premise}} \r\n\r\n\r\n\r\nPerci\xC3\xB2, \"\
+      {{hypothesis}}\" \xC3\xA8 {{\"sicuro\"}}, {{\"possibile\"}}, o {{\"impossibile\"\
+      }}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: guaranteed/possible/impossible
+    reference: Sanh et al. 2021
+  anli_justified in saying: !Template
+    answer_choices: Yes ||| Maybe ||| No
+    id: a850110d-f1a3-49b4-949a-d3bfe9f81344
+    jinja: "\r\n{{premise}} Siamo giustificati nel dire che \"{{hypothesis}}\"? S\xC3\
+      \xAC, no, o forse? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: justified in saying
+    reference: Webson & Pavlick 2021
+  anli_must be true: !Template
+    answer_choices: Yes ||| Maybe ||| No
+    id: bcd90047-3a2b-426b-b065-8a418f1317b8
+    jinja: "\r\nDato che {{premise}} Perci\xC3\xB2, deve essere vero che \"{{hypothesis}}\"\
+      ? S\xC3\xAC, no, o forse? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: must be true
+    reference: Sanh et al. 2021
+  anli_should assume: !Template
+    answer_choices: Yes ||| Maybe ||| No
+    id: 179eb863-3ece-4e6f-af0f-fcb46d997306
+    jinja: "\r\nDato {{premise}} Possiamo assumere che \"{{hypothesis}}\" \xC3\xA8\
+      \ vero? S\xC3\xAC, no, o forse? ||| {% if label !=-1 %}{{ answer_choices[label]\
+      \ }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: should assume
+    reference: Webson & Pavlick 2021
+  anli_take the following as truth: !Template
+    answer_choices: True ||| Inconclusive ||| False
+    id: bab86d5a-4f9c-40db-b619-a7b7d5cae681
+    jinja: "\r\nPrendi la premessa seguente come vera: {{premise}}\r\n\r\nAllora l'affermazione\
+      \ seguente: \"{{hypothesis}}\" \xC3\xA8 {{\"vera\"}}, {{\"falsa\"}}, or {{\"\
+      inconclusiva\"}}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: take the following as truth
+    reference: Sanh et al. 2021
+  app_reviews_categorize_rating_using_review: !Template
+    answer_choices: Not at all ||| No ||| Maybe ||| Yes ||| Definitely
+    id: 2da8f134-58db-4f9d-b3b0-8c6b50693ab5
+    jinja: "\r\nData la recensione: \"{{review}}\"\r\nRaccomanderesti questa app ad\
+      \ un amico? {{answer_choices[0]}}, {{answer_choices[1]}}, {{answer_choices[2]}},\
+      \ {{answer_choices[3]}}, or {{answer_choices[4]}}?\r\n|||\r\n{{answer_choices[star-1]}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: categorize_rating_using_review
+    reference: Given the review, return a categorical answer.
+  app_reviews_convert_to_rating: !Template
+    answer_choices: null
+    id: d34e1413-2699-4701-baa2-05d931d012ba
+    jinja: "\r\nIn una scala da 1 a 5 (essendo 1 il meno favorevole e 5 il pi\xC3\xB9\
+      \ favorevole), come giudicheresti questa recensione? \"{{review}}\"\r\n|||\r\
+      \n{{star}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: convert_to_rating
+    reference: Convert review to rating
+  app_reviews_convert_to_star_rating: !Template
+    answer_choices: "\u2605 ||| \u2605\u2605 ||| \u2605\u2605\u2605 ||| \u2605\u2605\
+      \u2605\u2605 ||| \u2605\u2605\u2605\u2605\u2605"
+    id: 9746ce4b-ac58-4dfb-9783-d77c95cb62cf
+    jinja: "\r\nQuale dovrebbe essere la valutazione in \xE2\u02DC\u2026 di questa\
+      \ recensione (essendo \xE2\u02DC\u2026 il minimo e \xE2\u02DC\u2026\xE2\u02DC\
+      \u2026\xE2\u02DC\u2026\xE2\u02DC\u2026\xE2\u02DC\u2026 il massimo)? \"{{review}}\"\
+      \r\n|||\r\n{{answer_choices[star-1]}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: convert_to_star_rating
+    reference: Given the review, generate a star rating.
+  app_reviews_generate_review: !Template
+    answer_choices: null
+    id: 8086b434-a75e-45a4-87fb-4364601e2e05
+    jinja: "\r\nGenera una recensione a {{star}} stelle (essendo 1 il minimo e 5 il\
+      \ massimo) riguardo ad un'app con pacchetto {{package_name}}.\r\n|||\r\n{{review}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      - Spearman Correlation
+      original_task: false
+    name: generate_review
+    reference: Generate a review from the rating.
+  cnn_dailymail_3.0.0_2_or_3_sentences: !Template
+    answer_choices: null
+    id: 6e46894f-b5ff-4259-a691-63f1da8405da
+    jinja: "\r\nIn 2 o 3 frasi, quali sono i punti principali che qualcuno dovrebbe\
+      \ ricordarsi di questo articolo di notizie?\r\n\r\nArticolo: {{article}} |||\r\
+      \n{{highlights}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: 2_or_3_sentences
+    reference: ''
+  cnn_dailymail_3.0.0_generate_story: !Template
+    answer_choices: null
+    id: b4ff2f63-8539-4d9c-9858-42fa5f95ba56
+    jinja: "\r\nGenera una storia dagli elementi chiave della trama:\r\n\r\n{{highlights}}\
+      \ |||\r\n{{article}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_story
+    reference: ''
+  cnn_dailymail_3.0.0_news_card_view: !Template
+    answer_choices: null
+    id: 9b7c6abf-5110-4b31-8345-be6b2eeea580
+    jinja: "\r\nCondensa l'articolo fino all'essenziale per presentarlo in forma di\
+      \ un breve pannello su un'app di notizie per telefono:\r\n\r\n{{article}} |||\r\
+      \n{{highlights}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: news_card_view
+    reference: ''
+  cnn_dailymail_3.0.0_news_stock: !Template
+    answer_choices: null
+    id: e047b4ec-abff-4b36-896a-83f5f1ea6759
+    jinja: "\r\nEstrai i punti chiave dall'articolo basandoti sul modo in cui il mercato\
+      \ azionario potrebbe reagire:\r\n\r\n{{article}} |||\r\n{{highlights}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: news_stock
+    reference: ''
+  cnn_dailymail_3.0.0_news_summary: !Template
+    answer_choices: null
+    id: 1c446bde-b3e6-4629-860f-9125681c72a1
+    jinja: "\r\nRiassumi l'articolo:\r\n\r\n{{article}} |||\r\n{{highlights}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: news_summary
+    reference: ''
+  cnn_dailymail_3.0.0_spice_up_story: !Template
+    answer_choices: null
+    id: efa42de6-7a20-4e35-92fc-919a5eb0b77e
+    jinja: "\r\nQuali dettagli includeresti in una storia per renderla pi\xC3\xB9\
+      \ accattivante e informativa?\r\n\r\n{{highlights}} |||\r\n{{article}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: spice_up_story
+    reference: ''
+  cnn_dailymail_3.0.0_sum_in_brief: !Template
+    answer_choices: null
+    id: c20ac3c5-da85-408a-bba9-8b12ef2ae379
+    jinja: "\r\nRiassumi brevemente i seguente articolo: {{article}}|||{{highlights}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: sum_in_brief
+    reference: ''
+  cnn_dailymail_3.0.0_tldr_summary: !Template
+    answer_choices: null
+    id: 892cbf90-2c19-4664-943e-a004a0c9a7fa
+    jinja: "\r\nPotresti per favore generare un riassunto TLDR (Too Long Didn't Read)\
+      \ del seguente articolo di notizie?\r\n\r\nArticolo: {{article}} |||\r\n{{highlights}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: tldr_summary
+    reference: ''
+  cnn_dailymail_3.0.0_write_an_outline: !Template
+    answer_choices: null
+    id: 0556fd07-f7de-4daf-a0ae-4cda4fc239c8
+    jinja: "\r\nPotresti scrivere il contenuto generale del seguente articolo in pochi\
+      \ punti?\r\n\r\nArticolo: {{article}}|||\r\n{{highlights}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: write_an_outline
+    reference: ''
+  cosmos_qa_context_answer_to_question: !Template
+    answer_choices: null
+    id: 015f333d-2a15-4552-9fe3-a20bd781001e
+    jinja: "Basandoti sul contesto e sulla risposta, genera una domanda.\r\n\r\nContesto:\
+      \ {{context}}\r\n\r\nRisposta:\r\n{% if label == 0 %}\r\n{{answer0}}\r\n{% elif\
+      \ label == 1 %}\r\n{{answer1}}\r\n{% elif label == 2 %}\r\n{{answer2}}\r\n{%\
+      \ elif label == 3 %}\r\n{{answer3}}\r\n{% endif %}\r\n|||\r\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: context_answer_to_question
+    reference: 'Template asks the model to generate questions '
+  cosmos_qa_context_description_question_answer_id: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 8a60255c-d44d-4f20-a631-ae1c0c9a7d68
+    jinja: "{{ context }}\r\nIn base al contesto in alto, scegli l'opzione migliore\
+      \ per rispondere alla seguente domanda.\r\nDomanda: {{ question }}\r\nOpzioni:\r\
+      \nA. {{ answer0 }}\r\nB. {{ answer1 }}\r\nC. {{ answer2 }}\r\nD. {{ answer3\
+      \ }}\r\n|||\r\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_description_question_answer_id
+    reference: Original task with context, question and the answer choices.
+  cosmos_qa_context_description_question_answer_text: !Template
+    answer_choices: '{{answer0}} ||| {{answer1}} ||| {{answer2}} ||| {{answer3}}'
+    id: 6b9a24cc-054e-40d6-8abf-261443122f3a
+    jinja: "{{ context }}\r\nIn base al contesto in alto, scegli l'opzione migliore\
+      \ per rispondere alla seguente domanda.\r\nDomanda: {{ question }}\r\nOpzioni:\r\
+      \n- {{answer_choices | join(\"\\n - \")}}\r\n|||\r\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_description_question_answer_text
+    reference: The template asks the model to generate the answer
+  cosmos_qa_context_description_question_text: !Template
+    answer_choices: '{{answer0}} ||| {{answer1}} ||| {{answer2}} ||| {{answer3}}'
+    id: c07c459e-f1f7-409e-9da7-fe5c993a4933
+    jinja: "{{ context }}\r\nIn base al contesto in alto, rispondi alla domanda seguente.\r\
+      \n{{ question }}\r\n|||\r\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_description_question_text
+    reference: The template asks the model to generate the answer without any answer
+      cues
+  cosmos_qa_context_question_description_answer_id: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 9dc80101-516d-448e-8e05-a62b4acead3b
+    jinja: "{{ context }}\r\n{{ question }}\r\nScegli la risposta migliore dalle seguenti\
+      \ opzioni:\r\nA. {{ answer0 }}\r\nB. {{ answer1 }}\r\nC. {{ answer2 }}\r\nD.\
+      \ {{ answer3 }}\r\n|||\r\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_question_description_answer_id
+    reference: Template asks the model to pick the correct answer
+  cosmos_qa_context_question_description_answer_text: !Template
+    answer_choices: '{{answer0}} ||| {{answer1}} ||| {{answer2}} ||| {{answer3}}'
+    id: d5499348-5cb3-467b-a543-206b5dd9806e
+    jinja: "{{ context }}\r\n{{ question }}\r\nScegli la migliore risposta dalle opzioni\
+      \ seguenti:\r\n- {{ answer_choices | join(\"\\n - \") }}\r\n|||\r\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_question_description_answer_text
+    reference: 'Context, question,  task description, and answer choices '
+  cosmos_qa_context_question_description_text: !Template
+    answer_choices: '{{answer0}} ||| {{answer1}} ||| {{answer2}} ||| {{answer3}}'
+    id: 7c30b1a1-14da-4458-95e8-c35f8de23110
+    jinja: "{{ context }}\r\nDomanda: {{ question }}\r\nRisposta alla domanda in alto:\r\
+      \n|||\r\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: false
+    name: context_question_description_text
+    reference: Context, question, task description, and generate the answer
+  cosmos_qa_description_context_question_answer_id: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 693c47c6-f17c-417a-af70-bc20e71b4ed4
+    jinja: "Leggi il seguente contesto e scegli l'opzione migliore per rispondere\
+      \ alla domanda.\r\nContesto: {{ context }}\r\nDomanda: {{ question }}\r\nOpzioni:\
+      \ \r\nA. {{ answer0 }}\r\nB. {{ answer1 }}\r\nC. {{ answer2 }}\r\nD. {{ answer3\
+      \ }}\r\n|||\r\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_context_question_answer_id
+    reference: Template asks the model to pick the correct answer
+  cosmos_qa_description_context_question_answer_text: !Template
+    answer_choices: '{{answer0}} ||| {{answer1}} ||| {{answer2}} ||| {{answer3}}'
+    id: 08e20b79-d1c0-4717-b538-f1a313c2b7d2
+    jinja: "Leggi il seguente contesto e scegli l'opzione migliore per rispondere\
+      \ alla domanda.\r\nContesto: {{ context }}\r\nDomanda: {{ question }}\r\nOpzioni:\
+      \ \r\n- {{ answer_choices | join(\"\\n - \") }}\r\n|||\r\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_context_question_answer_text
+    reference: 'Template generates the answer. Answer cues are included. '
+  cosmos_qa_description_context_question_text: !Template
+    answer_choices: '{{answer0}} ||| {{answer1}} ||| {{answer2}} ||| {{answer3}}'
+    id: 67d6ba13-4958-4e5e-842c-ada92aead6cc
+    jinja: "Leggi il seguente contesto e rispondi alla domanda.\r\nContesto: {{ context\
+      \ }}\r\nDomanda: {{ question }}\r\nRisposta:\r\n|||\r\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_context_question_text
+    reference: Template generates the answer
+  cosmos_qa_no_prompt_id: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 71325300-1f16-4a68-97c7-a03457f00cc7
+    jinja: "{{ context }}\r\n{{ question }}\r\nA. {{ answer0 }}\r\nB. {{ answer1 }}\r\
+      \nC. {{ answer2 }}\r\nD. {{ answer3 }}\r\n|||\r\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: no_prompt_id
+    reference: 'No prompt with context and question. '
+  cosmos_qa_no_prompt_text: !Template
+    answer_choices: '{{answer0}} ||| {{answer1}} ||| {{answer2}} ||| {{answer3}}'
+    id: 85e9ae2c-fbb7-47ed-980c-56da5299e9af
+    jinja: "{{ context }}\r\n{{ question }}\r\n- {{ answer_choices | join(\"\\n -\
+      \ \") }}\r\n|||\r\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: no_prompt_text
+    reference: 'No prompt with answer choices. The template asks the model to generate
+      the answer. '
+  dbpedia_14_given_list_what_category_does_the_paragraph_belong_to: !Template
+    answer_choices: Company ||| Educational Institution ||| Artist ||| Athlete |||
+      Office Holder ||| Mean Of Transportation ||| Building ||| Natural Place |||
+      Village ||| Animal ||| Plant ||| Album ||| Film ||| Written Work
+    id: 824ecb55-ecad-40c2-8033-f2fa0add2ddf
+    jinja: "\r\n{{content}} Data una lista di categorie: {{\"azienda, istituzione\
+      \ educativa, artista, atleta, titolare d'ufficio, mezzo di trasporto, edificio,\
+      \ luogo naturale, villaggio, animale, pianta, album, film o libro\"}}, a quale\
+      \ categoria appartiene il paragrafo? ||| {{ answer_choices[label] }}\r\n\r\n\
+      \r\n\r\n\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_list_what_category_does_the_paragraph_belong_to
+    reference: ''
+  dbpedia_14_pick_one_category_for_the_following_text: !Template
+    answer_choices: Company ||| Educational Institution ||| Artist ||| Athlete |||
+      Office Holder ||| Mean Of Transportation ||| Building ||| Natural Place |||
+      Village ||| Animal ||| Plant ||| Album ||| Film ||| Written Work
+    id: 8eda7e71-6734-486f-b883-e99d3f14c0bf
+    jinja: "\r\nScegli una categoria per il testo qui sotto. Le opzioni sono - {{\"\
+      azienda, istituzione educativa, artista, atleta, titolare d'ufficio, mezzo di\
+      \ trasporto, edificio, luogo naturale, villaggio, animale, pianta, album, film\
+      \ o libro\"}}. {{title}} - {{content}} ||| {{ answer_choices[label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: pick_one_category_for_the_following_text
+    reference: ''
+  dream_answer-to-dialogue: !Template
+    answer_choices: null
+    id: 5c53fe97-b8b9-4c91-bd75-b3f8e056bd01
+    jinja: "Data la domanda \"{{question}}\" e la risposta \"{{answer}}\", scrivi\
+      \ una conversazione che potrebbe essere avvenuta.\r\n|||\r\n{{dialogue | join(\"\
+      \\n\\n\")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: answer-to-dialogue
+    reference: ''
+  dream_baseline: !Template
+    answer_choices: '{{choice | join("|||")}}'
+    id: 8f962580-1611-4982-b567-05939c5012ff
+    jinja: "Dialogo:\r\n\r\n{{dialogue | join(\"\\n\\n\")}}\r\n\r\nDomanda: {{question}}\
+      \ \r\n\r\n- {{answer_choices[0]}}\r\n\r\n- {{answer_choices[1]}}\r\n\r\n- {{answer_choices[2]}}\r\
+      \n|||\r\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: baseline
+    reference: https://dataset.org/dream/
+  dream_read_the_following_conversation_and_answer_the_question: !Template
+    answer_choices: '{{choice | join("|||")}}'
+    id: d4687975-664d-46ac-b13b-482a35a61ab3
+    jinja: "Leggi la conversazione seguente e rispondi alla domanda.\r\n\r\n{{dialogue\
+      \ | join(\"\\n\\n\")}}\r\n\r\nDomanda: {{question}} \r\n\r\n- {{answer_choices[0]}}\r\
+      \n\r\n- {{answer_choices[1]}}\r\n\r\n- {{answer_choices[2]}}\r\n|||\r\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: read_the_following_conversation_and_answer_the_question
+    reference: ''
+  duorc_ParaphraseRC_answer_question: !Template
+    answer_choices: null
+    id: c6f75398-a993-44d6-a494-78961a7dc1b7
+    jinja: "\r\nPer favore, rispondi alla seguente domanda riguardante questa trama\
+      \ di film. Se non \xC3\xA8 risolvibile, per favore rispondi \"{{\"Nessuna risposta\"\
+      }}\".\r\n\r\nDomanda: {{question}}\r\nTitolo della trama del film: {{title}}\r\
+      \nTrama del film: {{plot}}\r\n|||\r\n{% if no_answer %}\r\nNessuna risposta\r\
+      \n{% else %}\r\n{{answers | choice }}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_question
+    reference: ''
+  duorc_ParaphraseRC_build_story_around_qa: !Template
+    answer_choices: null
+    id: 09adcadd-fa7b-4154-91cb-fe822bf8e00e
+    jinja: "\r\n{% if no_answer == false%}\r\nCostruisci la trama di un film riguardo\
+      \ a questo: {{ question }} {{answers|choice}}\r\n|||\r\n{{ plot }}\r\n{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: build_story_around_qa
+    reference: Given the question-answer pair, generate a relevant plot.
+  duorc_ParaphraseRC_decide_worth_it: !Template
+    answer_choices: null
+    id: 0c7049c0-750a-46b7-af38-dd1e9fcb5217
+    jinja: "\r\nSto cercando di decidere se valga la pena investire in questa premessa\
+      \ per film. Puoi aiutarmi a rispondere ad alcune domande? Se non puoi, per favore\
+      \ dimmi \"{{\"No, non posso\"}}\".\r\n\r\nDomanda: {{question}}\r\nTitolo del\
+      \ film: {{title}}\r\nTrama del film: {{plot}}\r\n|||\r\n{% if no_answer %}\r\
+      \nNo, non posso\r\n{% else %}\r\n{{answers|choice}}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: decide_worth_it
+    reference: ''
+  duorc_ParaphraseRC_extract_answer: !Template
+    answer_choices: null
+    id: 945053f7-6ad3-4c08-b7dd-5413564f7467
+    jinja: "\r\nEstrai la risposta alla seguente domanda sulla trama di un film. Se\
+      \ non puoi rispondere alla domanda, per favore rispondi \"{{\"Non posso rispondere\"\
+      }}\".\r\nDomanda: {{question}}\r\nTitolo: {{title}}\r\nTrama del film: {{plot}}\r\
+      \n|||\r\n{% if no_answer %}\r\nNon posso rispondere\r\n{% else %}\r\n{{answers\
+      \ | choice }}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: extract_answer
+    reference: ''
+  duorc_ParaphraseRC_generate_question: !Template
+    answer_choices: null
+    id: 842e346b-2d26-43a2-9a3a-9154f04eb76a
+    jinja: "Voglio testare l'abilit\xE0 degli studenti di leggere un passaggio e rispondere\
+      \ a domande su di esso. Potresti per favore formulare una buona domanda per\
+      \ il passaggio \"{{context}}\"? |||\r\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: Given the plot, generate a question.
+  duorc_ParaphraseRC_generate_question_by_answer: !Template
+    answer_choices: null
+    id: ce3649d8-fd90-4a77-8819-4eb20b1c83a9
+    jinja: "\r\n{% if no_answer == false%}\r\nGenera una domanda che ha la seguente\
+      \ risposta: \r\n{{answers|choice}} \r\nper la seguente trama di film: \r\n{{plot}}\r\
+      \n|||\r\n{{question}}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question_by_answer
+    reference: Given the passage and the answer, generate a question which has that
+      answer.
+  duorc_ParaphraseRC_movie_director: !Template
+    answer_choices: null
+    id: 805f121a-6bd4-4803-9428-ea733f385add
+    jinja: "\r\nSono un regista cinematografico e ho appena ricevuto la seguente trame\
+      \ per un film. Puoi aiutarmi a rispondere a questa domanda ? Se non puoi, fammelo\
+      \ sapere scrivendo \"{{\"Non risolvibile\"}}\".\r\n\r\nTitolo della trama: {{title}}\r\
+      \nTrama del film: {{plot}}\r\nMia domanda: {{question}}\r\n|||\r\n{% if no_answer\
+      \ %}\r\nNon risolvibile\r\n{% else %}\r\n{{answers|choice}}\r\n{% endif %}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: movie_director
+    reference: ''
+  duorc_ParaphraseRC_question_answering: !Template
+    answer_choices: null
+    id: 594d0551-d737-4680-a7a5-8393acc6dbb7
+    jinja: "\r\nQuestion: {{question}}\r\nSe non c'\xC3\xA8 risposta, per favore rispondimi\
+      \ \"{{\"Insufficient information to provide an answer.\"}}\".\r\nTitolo del\
+      \ film: {{title}}\r\nContesto: {{plot}}\r\n|||\r\n{% if no_answer %}\r\nInformazioni\
+      \ insufficienti per dare una risposta.\r\n{% else %}\r\n{{answers|choice}}\r\
+      \n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: question_answering
+    reference: Given a passage and a question, generate an answer.
+  duorc_ParaphraseRC_title_generation: !Template
+    answer_choices: null
+    id: a8597645-cfed-4f54-ba0d-c23eaafaa131
+    jinja: "\r\nSuggerisci un titolo per film dalla seguente trama: {{plot}}\r\n|||\r\
+      \n{{title}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: title_generation
+    reference: Given the plot for the movie, suggest a title.
+  duorc_SelfRC_answer_question: !Template
+    answer_choices: null
+    id: c1829c38-eae3-49a9-a047-f89316f58140
+    jinja: "\r\nPer favore, rispondi alla seguente domanda riguardante questa trama\
+      \ di film. Se non \xC3\xA8 risolvibile, per favore rispondi \"{{\"Nessuna risposta\"\
+      }}\".\r\n\r\nDomanda: {{question}}\r\nTitolo della trama del film: {{title}}\r\
+      \nTrama del film: {{plot}}\r\n|||\r\n{% if no_answer %}\r\nNessuna risposta\r\
+      \n{% else %}\r\n{{answers | choice }}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_question
+    reference: ''
+  duorc_SelfRC_build_story_around_qa: !Template
+    answer_choices: null
+    id: c76b38f1-b47a-4354-960d-58d2f0974d14
+    jinja: "\r\n{% if no_answer == false%}\r\nCostruisci la trama di un film riguardo\
+      \ a questo: {{ question }} {{answers|choice}}\r\n|||\r\n{{ plot }}\r\n{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: build_story_around_qa
+    reference: Given the question-answer pair, generate a relevant plot.
+  duorc_SelfRC_decide_worth_it: !Template
+    answer_choices: null
+    id: f64279e3-dc9b-4480-9aa6-72d9d1ca2287
+    jinja: "\r\nSto cercando di decidere se valga la pena investire in questa premessa\
+      \ per film. Puoi aiutarmi a rispondere ad alcune domande? Se non puoi, per favore\
+      \ dimmi \"{{\"No, non posso\"}}\".\r\n\r\nDomanda: {{question}}\r\nTitolo del\
+      \ film: {{title}}\r\nTrama del film: {{plot}}\r\n|||\r\n{% if no_answer %}\r\
+      \nNo, non posso\r\n{% else %}\r\n{{answers|choice}}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: decide_worth_it
+    reference: ''
+  duorc_SelfRC_extract_answer: !Template
+    answer_choices: null
+    id: 606e9fc0-d07d-45e6-a828-b786fd3a10da
+    jinja: "\r\nEstrai la risposta alla seguente domanda sulla trama di un film. Se\
+      \ non puoi rispondere alla domanda, per favore rispondi \"{{\"Non posso rispondere\"\
+      }}\".\r\nDomanda: {{question}}\r\nTitolo: {{title}}\r\nTrama del film: {{plot}}\r\
+      \n|||\r\n{% if no_answer %}\r\nNon posso rispondere\r\n{% else %}\r\n{{answers\
+      \ | choice }}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: extract_answer
+    reference: ''
+  duorc_SelfRC_generate_question: !Template
+    answer_choices: null
+    id: af62f222-a8d2-439f-9586-52e0279d25cc
+    jinja: "Voglio testare l'abilit\xE0 degli studenti di leggere un passaggio e rispondere\
+      \ a domande su di esso. Potresti per favore formulare una buona domanda per\
+      \ il passaggio \"{{context}}\"? |||\r\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question
+    reference: Given the plot, generate a question.
+  duorc_SelfRC_generate_question_by_answer: !Template
+    answer_choices: null
+    id: 1f544641-ba15-44ef-bfcd-c951d320eb9a
+    jinja: "\r\n{% if no_answer == false%}\r\nGenera una domanda che ha la seguente\
+      \ risposta: \r\n{{answers|choice}} \r\nper la seguente trama di film: \r\n{{plot}}\r\
+      \n|||\r\n{{question}}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_question_by_answer
+    reference: Given the passage and the answer, generate a question which has that
+      answer.
+  duorc_SelfRC_movie_director: !Template
+    answer_choices: null
+    id: 289254d0-e382-4c9d-9638-984c01fe7391
+    jinja: "\r\nSono un regista cinematografico e ho appena ricevuto la seguente trame\
+      \ per un film. Puoi aiutarmi a rispondere a questa domanda ? Se non puoi, fammelo\
+      \ sapere scrivendo \"{{\"Non risolvibile\"}}\".\r\n\r\nTitolo della trama: {{title}}\r\
+      \nTrama del film: {{plot}}\r\nMia domanda: {{question}}\r\n|||\r\n{% if no_answer\
+      \ %}\r\nNon risolvibile\r\n{% else %}\r\n{{answers|choice}}\r\n{% endif %}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: movie_director
+    reference: ''
+  duorc_SelfRC_question_answering: !Template
+    answer_choices: null
+    id: c917a801-28fe-4c78-93d8-8e43897aa613
+    jinja: "\r\nQuestion: {{question}}\r\nSe non c'\xC3\xA8 risposta, per favore rispondimi\
+      \ \"{{\"Insufficient information to provide an answer.\"}}\".\r\nTitolo del\
+      \ film: {{title}}\r\nContesto: {{plot}}\r\n|||\r\n{% if no_answer %}\r\nInformazioni\
+      \ insufficienti per dare una risposta.\r\n{% else %}\r\n{{answers|choice}}\r\
+      \n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: question_answering
+    reference: Given a passage and a question, generate an answer.
+  duorc_SelfRC_title_generation: !Template
+    answer_choices: null
+    id: d486ac96-de6b-403a-8628-5adb23252194
+    jinja: "\r\nSuggerisci un titolo per film dalla seguente trama: {{plot}}\r\n|||\r\
+      \n{{title}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: title_generation
+    reference: Given the plot for the movie, suggest a title.
+  gigaword_TLDR: !Template
+    answer_choices: null
+    id: 90c34acf-2f42-4e66-98dc-7453f7e60e60
+    jinja: "\r\n{{document}}\r\n\r\nTL;DR: ||| {{summary}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: TLDR
+    reference: GPT-2 TLDR
+  gigaword_first_sentence_title: !Template
+    answer_choices: null
+    id: 7ad1a48a-195d-4c0c-aea5-df0689589f27
+    jinja: "\r\nPrima frase dell'articolo: {{document}}\r\n\r\nTitolo: ||| {{summary}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: first_sentence_title
+    reference: ''
+  gigaword_generate_summary_for_this: !Template
+    answer_choices: null
+    id: 0a45ae54-4585-4d13-9540-890125d614e0
+    jinja: "\r\n{{document}}\r\n\r\n===\r\n\r\nGenera un titolo per l'articolo: |||\
+      \ {{summary}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: generate_summary_for_this
+    reference: ''
+  gigaword_in_a_nutshell: !Template
+    answer_choices: null
+    id: ac53a797-4d59-455a-b0e6-0e4d7d85f029
+    jinja: "\r\n{{document}} In poche parole, ||| {{summary}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: in_a_nutshell
+    reference: ''
+  gigaword_make_a_title: !Template
+    answer_choices: null
+    id: 696e561e-1311-4a3e-9ca1-51d1fd77392b
+    jinja: "\r\nProduci un titolo per questo articolo: {{document}} |||\r\n\r\n{{summary}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: make_a_title
+    reference: ''
+  gigaword_reverse_writing: !Template
+    answer_choices: null
+    id: 2558932f-894a-41ef-be34-32a5afb1f5d8
+    jinja: "\r\nTitolo: {{summary}}\r\n\r\n||| {{document}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: reverse_writing
+    reference: ''
+  gigaword_write_a_title_for_this_sentence: !Template
+    answer_choices: null
+    id: a0e699bf-1268-4929-ad13-438c08644118
+    jinja: "\r\nScrivi un titolo per questa frase: {{document}} \r\n\r\nTitolo: |||\
+      \ {{summary}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: write_a_title_for_this_sentence
+    reference: ''
+  gigaword_write_an_article: !Template
+    answer_choices: null
+    id: d1d4a115-65fd-49eb-bd75-179a46b67ec0
+    jinja: "\r\nTitolo: {{summary}}\r\n\r\n===\r\n\r\nScrivi un artivolo con il seguente\
+      \ titolo: ||| {{document}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: write_an_article
+    reference: ''
+  gigaword_write_its_sentence: !Template
+    answer_choices: null
+    id: 93f0c400-501f-43ad-861b-4f67564f2e8f
+    jinja: "\r\n{{document}}\r\n\r\n===\r\n\r\nData la frase soprastante, scrivi il\
+      \ suo titolo: ||| {{summary}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: true
+    name: write_its_sentence
+    reference: ''
+  glue_mrpc_equivalent: !Template
+    answer_choices: not equivalent ||| equivalent
+    id: bbb395c2-2c70-4eaa-ad2f-2cf18a81da93
+    jinja: "\r\nLe due frasi qui sotto sono \"{{\"equivalenti\"}}\" o \"{{\"non equivalenti\"\
+      }}\"?\r\n\r\n{{sentence1}}\r\n\r\n{{sentence2}}\r\n\r\n|||\r\n\r\n{{ answer_choices[label]\
+      \ }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: equivalent
+    reference: ''
+  glue_mrpc_generate_paraphrase: !Template
+    answer_choices: null
+    id: 3b88d2c4-0aeb-4c6d-9ccc-653a388250a5
+    jinja: "\r\n{% if label == 1 %}\r\n\r\nParafrasa la frase qui sotto: {{sentence1}}\r\
+      \n\r\n|||\r\n\r\n{{sentence2}}\r\n\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_paraphrase
+    reference: ''
+  glue_mrpc_generate_sentence: !Template
+    answer_choices: null
+    id: d830d7a5-abc0-4275-ac62-974e0088876f
+    jinja: "\r\n{% if label == 1 %}\r\n\r\nGenera una frase con lo stesso significato\
+      \ di questa: {{sentence1}}\r\n\r\n|||\r\n\r\n{{sentence2}}\r\n\r\n{% endif %}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: generate_sentence
+    reference: ''
+  glue_mrpc_paraphrase: !Template
+    answer_choices: no ||| yes
+    id: adf659af-4e2d-4e7e-ab89-b33cfc0b5a50
+    jinja: "\r\nLa frase \r\n\r\n{{sentence1}}\r\n\r\nparafrasa (vuol dire ha lo stesso\
+      \ significato) questa frase?\r\n\r\n{{sentence2}}\r\n\r\n|||\r\n\r\n{{ answer_choices[label]\
+      \ }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: paraphrase
+    reference: ''
+  glue_mrpc_replace: !Template
+    answer_choices: no ||| yes
+    id: ee82d511-908c-4244-804f-6d0d907c68c7
+    jinja: "\r\nPosso sostituire la frase\r\n\r\n{{sentence1}}\r\n\r\ncon la frase\r\
+      \n\r\n{{sentence2}}\r\n\r\ne farle avere lo stesso significato?\r\n\r\n|||\r\
+      \n\r\n{{ answer_choices[label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: replace
+    reference: ''
+  glue_mrpc_same thing: !Template
+    answer_choices: no ||| yes
+    id: eefd8606-b936-4d26-b91d-8f4bc38bfcbf
+    jinja: "\r\nLe frasi qui sotto hanno lo stesso significato?\r\n\r\n{{sentence1}}\r\
+      \n\r\n{{sentence2}}\r\n\r\n|||\r\n\r\n{{ answer_choices[label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same thing
+    reference: ''
+  glue_mrpc_want to know: !Template
+    answer_choices: no ||| yes
+    id: 44c2e6d9-facf-4959-8400-38e0eb8dd3a8
+    jinja: "\r\nVoglio sapere se le due frasi qui sotto hanno lo stesso significato.\r\
+      \n\r\n{{sentence1}}\r\n\r\n{{sentence2}}\r\n\r\nHanno lo stesso significato?\r\
+      \n\r\n|||\r\n\r\n{{ answer_choices[label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: want to know
+    reference: ''
+  hellaswag_Open-ended completion: !Template
+    answer_choices: '{{endings | join(" ||| ")}}'
+    id: 1fd44f45-d0e6-41ad-a01f-737f4c53645b
+    jinja: "Completa la frase: {{ctx}}\r\n|||\r\n{{answer_choices[label | int()]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Open-ended completion
+    reference: Template for open-ended common sense completion
+  hellaswag_Open-ended start: !Template
+    answer_choices: null
+    id: a8ab00ee-78ad-465b-bbf0-9cd3d242dd7e
+    jinja: "Come inizieresti la frase:\r\n{{endings[label | int()]}}\r\n|||\r\n{{ctx}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Open-ended start
+    reference: Template asks the model to generate a premise or start for the ending
+  hellaswag_Predict ending with hint: !Template
+    answer_choices: '{{endings | join("|||")}}'
+    id: 6e9f8d7d-9016-45bc-b997-c42aeb2dc944
+    jinja: "Come finisce questa frase?\r\n{{ctx}}\r\n\r\n(a)  {{answer_choices[0]}}\r\
+      \n\r\n(b)  {{answer_choices[1]}}\r\n\r\n(c)  {{answer_choices[2]}}\r\n\r\n(d)\
+      \  {{answer_choices[3]}}\r\n\r\nSuggerimento: l'argomento della frase \xE8 {{activity_label}}\r\
+      \n|||\r\n{{answer_choices [label | int()]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Predict ending with hint
+    reference: Predict the ending with the activity label as the hint
+  hellaswag_Randomized prompts template: !Template
+    answer_choices: '{{endings | join(" ||| ") }}'
+    id: 52fbd075-46cb-49fb-a41b-00a0f4a60285
+    jinja: "{% set prompts = [\r\n'Puoi scegliere la fine migliore per la frase: ',\r\
+      \n'Il compito \xE8 generare la fine per la frase: ',\r\n'Come finisce questa\
+      \ frase? ',\r\n'Dalla lista di finali descritti in basso, quale finale ha pi\xF9\
+      \ senso per la frase ',]\r\n%}\r\n{{prompts | choice}}\r\n{{ctx}}\r\n\r\n(a)\
+      \  {{answer_choices[0]}}\r\n\r\n(b)  {{answer_choices[1]}}\r\n\r\n(c)  {{answer_choices[2]}}\r\
+      \n\r\n(d)  {{answer_choices[3]}}\r\n|||\r\n{{answer_choices [label | int()]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Randomized prompts template
+    reference: Original task template with randomized prompt template
+  hellaswag_Topic of the context: !Template
+    answer_choices: null
+    id: 4ebf22a1-2d23-426c-a083-b43fc8567687
+    jinja: "{{ctx}} {{endings[label | int()]}}\r\nPuoi identificare l'argomento del\
+      \ paragrafo?\r\n|||\r\n{{activity_label}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Topic of the context
+    reference: List the activity label as the topic from the sentence
+  hellaswag_Topic without the ending answer: !Template
+    answer_choices: null
+    id: 196a016d-bd25-4387-90b9-53197fd43b1e
+    jinja: "Qual \xE8 l'argomento della frase: {{ctx}}\r\n|||\r\n{{activity_label}} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Topic without the ending answer
+    reference: Generate the topic sentence with only the starting sentence
+  hellaswag_how_ends: !Template
+    answer_choices: Ending 1 ||| Ending 2 ||| Ending 3 ||| Ending 4
+    id: db8b1c25-f2db-4604-b8fc-f93d69d6fae7
+    jinja: "{{ ctx }}...\r\nCome finisce probabilmente la descrizione?\r\n\r\nFinale\
+      \ 1: {{ endings[0] }}\r\n\r\nFinale 2: {{ endings[1] }}\r\n\r\nFinale 3: {{\
+      \ endings[2] }}\r\n\r\nFinale 4: {{ endings[3] }}\r\n||| {{ answer_choices[label\
+      \ | int()] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: false
+    name: how_ends
+    reference: ''
+  hellaswag_if_begins_how_continues: !Template
+    answer_choices: Ending 1 ||| Ending 2 ||| Ending 3 ||| Ending 4
+    id: def77598-682f-48de-b187-55db4d390f07
+    jinja: "Se una descrizione di una situazione inizia cos\xEC: {{ ctx }}... Come\r\
+      \ncontinua?\r\n\r\nFinale 1: {{ endings[0] }}\r\n\r\nFinale 2: {{ endings[1]\
+      \ }}\r\n\r\nFinale 3: {{ endings[2] }}\r\n\r\nFinale 4: {{ endings[3] }}\r\n\
+      |||{{answer_choices[label | int()] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: if_begins_how_continues
+    reference: Returns a Ending <int> string in the template (similar to how ends
+      paraphrased)
+  imdb_Movie Expressed Sentiment: !Template
+    answer_choices: negative ||| positive
+    id: af51297c-38a3-4d6c-a8b5-04b1243d7443
+    jinja: "\r\n{{text}} Il sentimento espresso dal film \xC3\xA8 ||| {{ answer_choices\
+      \ [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment
+    reference: ''
+  imdb_Movie Expressed Sentiment 2: !Template
+    answer_choices: negative ||| positive
+    id: 02ff2949-0f45-4d97-941e-6fa4c0afbc2d
+    jinja: "\r\nQuale sentimento esprime is seguente film? {{text}} ||| {{ answer_choices\
+      \ [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment 2
+    reference: ''
+  imdb_Negation template for positive and negative: !Template
+    answer_choices: negative ||| positive
+    id: b9b5d79d-f0b3-4bec-a724-f585db3e93ff
+    jinja: "\r\n{{text}} Questa non \xC3\xA8 decisamente una recensione ||| {{ answer_choices\
+      \ [1-label]}} .\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Negation template for positive and negative
+    reference: ''
+  imdb_Reviewer Enjoyment: !Template
+    answer_choices: They didn't like it! ||| They loved it
+    id: e01970ab-42c0-4e6e-a08f-4940d889ef37
+    jinja: "\r\n{{text}} Come si sente il recensore riguardo al film? ||| {{ answer_choices\
+      \ [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment
+    reference: ''
+  imdb_Reviewer Enjoyment Yes No: !Template
+    answer_choices: No ||| Yes
+    id: bd82ba0f-01d4-4fa1-bf8d-07e392c00cd9
+    jinja: "\r\n{{text}} Il recensore ha apprezzato il film? ||| {{ answer_choices\
+      \ [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment Yes No
+    reference: ''
+  imdb_Reviewer Expressed Sentiment: !Template
+    answer_choices: negative ||| positive
+    id: c70d1687-2421-49a2-9553-91b8bac4cfbe
+    jinja: "\r\n{{text}} Qual \xC3\xA8 il sentimento espresso dal recensore riguardo\
+      \ al film? ||| {{ answer_choices [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Expressed Sentiment
+    reference: ''
+  imdb_Reviewer Opinion bad good choices: !Template
+    answer_choices: bad ||| good
+    id: 2351d12a-e630-4d19-8b41-e199266e38f7
+    jinja: "\r\n{{text}} Il recensore ha trovato questo film {{\"bello o brutto\"\
+      }}? ||| {{ answer_choices [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Opinion bad good choices
+    reference: ''
+  imdb_Reviewer Sentiment Feeling: !Template
+    answer_choices: negative ||| positive
+    id: 866474a5-1498-46b7-bfee-ac0c5160707f
+    jinja: "\r\n{{text}} Come si sente lo spettatore riguardo al film? ||| {{ answer_choices\
+      \ [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Sentiment Feeling
+    reference: ''
+  imdb_Text Expressed Sentiment: !Template
+    answer_choices: negative ||| positive
+    id: b93b74ac-fe95-40b4-9610-318b46ab820f
+    jinja: "\r\n{{text}} Qual \xC3\xA8 il sentimento espresso in questo testo? |||\
+      \ {{ answer_choices [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Text Expressed Sentiment
+    reference: ''
+  imdb_Writer Expressed Sentiment: !Template
+    answer_choices: negative ||| positive
+    id: 96538f30-f2c1-430e-8fc6-936a16966d9c
+    jinja: "\r\n{{text}} Quali sentimenti esprime l'autore riguardo al film? ||| {{\
+      \ answer_choices [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Writer Expressed Sentiment
+    reference: ''
+  paws_labeled_final_Concatenation: !Template
+    answer_choices: No ||| Yes
+    id: 8c259e88-7646-4a50-a4ca-90393920f281
+    jinja: "Frase 1: {{sentence1}}\r\nFrase 2: {{sentence2}}\r\nDomanda: La Frase\
+      \ 1 parafrasa la Frase 2? S\xEC o No?\r\n||| \r\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Concatenation
+    reference: Concatenation of sentence 1 and sentence 2
+  paws_labeled_final_Concatenation-no-label: !Template
+    answer_choices: No ||| Yes
+    id: a6d9ec4e-acd4-46cd-9eeb-ae32e0ab8076
+    jinja: "Frase 1: {{sentence1}}\r\nFrase 2: {{sentence2}}\r\nDomanda: La Frase\
+      \ 1 parafrasa la Frase 2?\r\n||| \r\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Concatenation-no-label
+    reference: Concatenation of sentence 1 and sentence 2 without any label
+  paws_labeled_final_Meaning: !Template
+    answer_choices: No ||| Yes
+    id: 472fe5eb-b499-4952-a930-f72f4ca9ed43
+    jinja: "Frase 1: {{sentence1}}\r\nFrase 2: {{sentence2}}\r\nDomanda: La Frase\
+      \ 1 e la Frase 2 esprimono lo stesso concetto? S\xEC o No?\r\n||| \r\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Meaning
+    reference: Natural question
+  paws_labeled_final_Meaning-no-label: !Template
+    answer_choices: No ||| Yes
+    id: d5239f5f-2014-47c9-a0c1-4896f76f82a4
+    jinja: "Frase 1: {{sentence1}}\r\nFrase 2: {{sentence2}}\r\nDomanda: La Frase\
+      \ 1 e la Frase 2 esprimono lo stesso concetto?\r\n||| \r\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Meaning-no-label
+    reference: Natural question without label
+  paws_labeled_final_PAWS-ANLI GPT3: !Template
+    answer_choices: False ||| True
+    id: d9911dad-75fe-4506-9843-3a46ba5e49be
+    jinja: "{{sentence1}} Domanda: {{sentence2}} Vero o Falso? \r\n||| \r\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: PAWS-ANLI GPT3
+    reference: ANLI prompt format from Table G7 in the GPT3 paper
+  paws_labeled_final_PAWS-ANLI GPT3-no-label: !Template
+    answer_choices: No ||| Yes
+    id: f0866713-c59a-4c5d-a307-95e80a935f99
+    jinja: "{{sentence1}} Domanda: {{sentence2}} Parafrasi o no?\r\n||| \r\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: PAWS-ANLI GPT3-no-label
+    reference: ANLI prompt format from Table G7 in the GPT3 paper. Additionally added
+      task information without any label.
+  paws_labeled_final_Rewrite: !Template
+    answer_choices: No ||| Yes
+    id: dd52359b-dc56-4241-8179-c98c636f0335
+    jinja: "Frase 1: {{sentence1}}\r\nFrase 2: {{sentence2}}\r\nDomanda: La Frase\
+      \ 1 pu\xF2 essere riscritta come la Frase 2? S\xEC o No?\r\n||| \r\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Rewrite
+    reference: Natural Question
+  paws_labeled_final_Rewrite-no-label: !Template
+    answer_choices: No ||| Yes
+    id: 678400f8-1a5c-4a40-b5ef-abeaa41e20ec
+    jinja: "Frase 1: {{sentence1}}\r\nFrase 2: {{sentence2}}\r\nDomanda: Frase 1 potrebbe\
+      \ essere riscritta come Frase 2?\r\n||| \r\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Rewrite-no-label
+    reference: Natural Question without label
+  paws_labeled_final_context-question: !Template
+    answer_choices: No ||| Yes
+    id: 7c205a61-64d4-4673-bb8e-bfa77562eede
+    jinja: "{{sentence1}}\r\nQuesta \xE8 una parafrasi della frase seguente?\r\n{{sentence2}}?\r\
+      \nS\xEC o No.\r\n||| \r\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context-question
+    reference: Generalized prompt format, context-question
+  paws_labeled_final_context-question-no-label: !Template
+    answer_choices: No ||| Yes
+    id: 4c8d4e4c-eae4-45f6-bdf0-d132ae198d09
+    jinja: "{{sentence1}}\r\nQuesta \xE8 una parafrasi della frase seguente?\r\n{{sentence2}}?\r\
+      \n||| \r\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context-question-no-label
+    reference: Generalized prompt format, context-question without any label
+  paws_labeled_final_paraphrase-task: !Template
+    answer_choices: null
+    id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
+    jinja: "{% if label == 1 %} \r\nParafrasa la frase: {{sentence1}} \r\n||| \r\n\
+      {{sentence2}} \r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: paraphrase-task
+    reference: Create a generative paraphrase task
+  paws_labeled_final_task_description-no-label: !Template
+    answer_choices: No ||| Yes
+    id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
+    jinja: "Determina se le due frasi seguenti si parafrasano a vicenda oppure no.\r\
+      \nFrase 1: {{sentence1}}\r\nFrase 2: {{sentence2}}\r\n||| \r\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: task_description-no-label
+    reference: Generalized prompt format, task_description-input.
+  qasc_qa_with_separated_facts_1: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 40ef67db-dff3-4e7b-b167-f7e54b400c74
+    jinja: "{{ fact1[0]|capitalize }}{{ fact1[1:]|trim|trim('.') }}, e {{fact2[0]|lower\
+      \ }}{{ fact2[1:]|trim|trim('.') }}. Dati questi fatti, {{ question[0]|lower\
+      \ }}{{question[1:]|trim('?') }} tra le opzioni seguenti:\r\n- {{answer_choices\
+      \ | join(\"\\n - \") }}\r\n\r\n||| \r\n\r\n{% for choice in choices.label %}\
+      \ {% if choice == answerKey %}{{ answer_choices[loop.index - 1] }}{% endif %}{%\
+      \ endfor %} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_with_separated_facts_1
+    reference: Question Answering with separated facts.
+  qasc_qa_with_separated_facts_2: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: c7cd51f1-ea49-4d6a-a422-46624333b7b1
+    jinja: "Fatto 1: {{ fact1[0]|capitalize }}{{ fact1[1:]|trim|trim('.') }}.\r\n\r\
+      \nFatto 2: {{fact2[0]|capitalize }}{{ fact2[1:]|trim|trim('.') }}.\r\n\r\nDati\
+      \ i due fatti in alto, rispondi alla domanda \"{{ question }}\" con le seguenti\
+      \ opzioni:\r\n- {{answer_choices | join(\"\\n - \") }}\r\n\r\n||| \r\n\r\n{%\
+      \ for choice in choices.label %} {% if choice == answerKey %}{{ answer_choices[loop.index\
+      \ - 1] }}{% endif %}{% endfor %} "
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_with_separated_facts_2
+    reference: Question Answering with separated facts.
+  qasc_qa_with_separated_facts_3: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 5d63c186-e047-49dd-b5fd-c4a574f6f0e2
+    jinja: "Fatto 1: {{ fact1[0]|capitalize }}{{ fact1[1:]|trim|trim('.') }}.\r\n\r\
+      \nFatto 2: {{fact2[0]|capitalize }}{{ fact2[1:]|trim|trim('.') }}.\r\n\r\nDati\
+      \ i due fatti in alto, {{ question[0]|lower }}{{question[1:]|trim('?') }}?\r\
+      \n\r\n||| \r\n\r\n{% for choice in choices.label %} {% if choice == answerKey\
+      \ %}{{ answer_choices[loop.index - 1] }}{% endif %}{% endfor %}  "
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: qa_with_separated_facts_3
+    reference: Question Answering with separated facts.
+  quail_context_description_question_answer_id: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 88d0056d-e736-405f-85aa-155474fde51a
+    jinja: "{{ context }}\r\nIn base al contesto in alto, scegli l'opzione migliore\
+      \ per rispondere alla seguente domanda.\r\nDomanda: {{ question }}\r\nOpzioni:\r\
+      \nA. {{ answer0 }}\r\nB. {{ answer1 }}\r\nC. {{ answer2 }}\r\nD. {{ answer3\
+      \ }}\r\n|||\r\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_description_question_answer_id
+    reference: ''
+  quail_context_description_question_answer_text: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: ea0ba07f-bb89-42dc-b1e8-4fe6008297b2
+    jinja: "{{ context }}\r\nIn base al contesto in alto, scegli l'opzione migliore\
+      \ per rispondere alla seguente domanda.\r\nDomanda: {{ question }}\r\nOpzioni:\r\
+      \n- {{answer_choices | join(\"\\n - \")}}\r\n|||\r\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_description_question_answer_text
+    reference: ''
+  quail_context_description_question_text: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: 7b0ce9fa-6aa0-4210-ab6c-1edd4b2f43df
+    jinja: "{{ context }}\r\nIn base al contesto in alto, rispondi alla domanda seguente.\r\
+      \n{{ question }}\r\n|||\r\n{{answer_choices[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: false
+    name: context_description_question_text
+    reference: ''
+  quail_context_question_answer_description_id: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 01870e5a-39d0-4485-a453-893d46c82736
+    jinja: "{{ context }}\r\nDomanda: {{ question }}\r\nOpzioni:\r\n{% for k in range(answers\
+      \ | length) %}\r\n{{'. '.join([answer_choices[k], answers[k]])}}\r\n{% endfor\
+      \ %}\r\n===\r\nLa risposta corretta \xE8:\r\n|||\r\n{{ answer_choices[correct_answer_id]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_question_answer_description_id
+    reference: ''
+  quail_context_question_answer_description_text: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: 1225d6c7-4d4c-46ab-9a65-a8fa87826906
+    jinja: "{{ context }}\r\nDomanda: {{ question }}\r\nOpzioni:\r\n- {{ answer_choices\
+      \ | join(\" \\n - \") }}\r\n===\r\nLa risposta corretta \xE8\r\n|||\r\n{{ answer_choices[correct_answer_id]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_question_answer_description_text
+    reference: ''
+  quail_context_question_description_answer_id: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 7c9c7cec-12c1-4005-a9a1-a027e472d949
+    jinja: "{{ context }}\r\n{{ question }}\r\nScegli la risposta migliore dalle seguenti\
+      \ opzioni:\r\nA. {{ answer0 }}\r\nB. {{ answer1 }}\r\nC. {{ answer2 }}\r\nD.\
+      \ {{ answer3 }}\r\n|||\r\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_question_description_answer_id
+    reference: ''
+  quail_context_question_description_answer_text: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: 7186e352-adfa-4c16-8eda-d9fcccb6293e
+    jinja: "{{ context }}\r\n{{ question }}\r\nScegli la migliore risposta dalle opzioni\
+      \ seguenti:\r\n- {{ answer_choices | join(\"\\n - \") }}\r\n|||\r\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: context_question_description_answer_text
+    reference: ''
+  quail_context_question_description_text: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: 773d1dad-ccc7-4f5d-936b-c43b2d3eedf7
+    jinja: "{{ context }}\r\nDomanda: {{ question }}\r\nRisposta alla domanda in alto:\r\
+      \n|||\r\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: false
+    name: context_question_description_text
+    reference: ''
+  quail_description_context_question_answer_id: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 38caa4e6-28b9-4476-8609-b66c83679fcc
+    jinja: "Leggi il seguente contesto e scegli l'opzione migliore per rispondere\
+      \ alla domanda.\r\nContesto: {{ context }}\r\nDomanda: {{ question }}\r\nOpzioni:\
+      \ \r\nA. {{ answer0 }}\r\nB. {{ answer1 }}\r\nC. {{ answer2 }}\r\nD. {{ answer3\
+      \ }}\r\n|||\r\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_context_question_answer_id
+    reference: ''
+  quail_description_context_question_answer_text: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: f374c2ca-952a-47ab-8420-cb5fb2c693d9
+    jinja: "Leggi il seguente contesto e scegli l'opzione migliore per rispondere\
+      \ alla domanda.\r\nContesto: {{ context }}\r\nDomanda: {{ question }}\r\nOpzioni:\
+      \ \r\n- {{ answer_choices | join(\"\\n - \") }}\r\n|||\r\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: description_context_question_answer_text
+    reference: ''
+  quail_description_context_question_text: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: a071e73e-5fda-45b5-8a6a-b56e477a6aee
+    jinja: "Leggi il seguente contesto e rispondi alla domanda.\r\nContesto: {{ context\
+      \ }}\r\nDomanda: {{ question }}\r\nRisposta:\r\n|||\r\n{{ answer_choices[label]\
+      \ }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: false
+    name: description_context_question_text
+    reference: ''
+  quail_no_prompt_id: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 80fe7668-d088-4432-98bd-9df022a62b5b
+    jinja: "{{ context }}\r\n{{ question }}\r\nA. {{ answer0 }}\r\nB. {{ answer1 }}\r\
+      \nC. {{ answer2 }}\r\nD. {{ answer3 }}\r\n|||\r\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: no_prompt_id
+    reference: ''
+  quail_no_prompt_text: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: cb57451d-2a1c-4db1-a352-9f50d835b327
+    jinja: "{{ context }}\r\n{{ question }}\r\n- {{ answer_choices | join(\"\\n -\
+      \ \") }}\r\n|||\r\n{{ answer_choices[label] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: no_prompt_text
+    reference: ''
+  quartz_answer_question_based_on: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 2f6baa0c-3b69-48be-b195-cc00cb5c96fa
+    jinja: "\r\nRispndi alla domanda basandoti sul testo seguente.\r\n\r\n\r\n\r\n\
+      Domanda:\r\n\r\n\r\n\r\n{% if '_____' in question %}\r\n\r\n{{ question | trim(\"\
+      .?!\") | replace(\"_____\", answer_choices | join(\" o \")) }}{{ \"?\" }} \r\
+      \n\r\n{% else %}\r\n\r\n{{ question | trim(\".?!\") }} {{ answer_choices | join(\"\
+      \ o \") }}{{ \"?\" }} \r\n\r\n{% endif %}\r\n\r\n\r\n\r\nTesto:\r\n\r\n\r\n\r\
+      \n{{ para }}|||\r\n\r\n{{answer_choices[choices.label.index(answerKey)]}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: answer_question_based_on
+    reference: ''
+  quartz_answer_question_below: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 397bdb29-03e8-478b-9840-1bfe9d57d6fb
+    jinja: "\r\nRispondi alla domanda qui sotto:\r\n\r\n\r\n\r\n{% if '_____' in question\
+      \ %}\r\n\r\n{{ question | trim(\".?!\") | replace(\"_____\", answer_choices\
+      \ | join(\" o \")) }}{{ \"?\" }} \r\n\r\n{% else %}\r\n\r\n{{ question | trim(\"\
+      .?!\") }} {{  answer_choices | join(\" o \") }}{{ \"?\" }} \r\n\r\n{% endif\
+      \ %}\r\n\r\n\r\n\r\nAssumendo che:\r\n\r\n\r\n\r\n{{ para }}|||\r\n\r\n{{answer_choices[choices.label.index(answerKey)]}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: answer_question_below
+    reference: ''
+  quartz_given_the_fact_answer_the_q: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: a8c6ae4c-4874-47d1-93ea-801b6e080a58
+    jinja: "\r\nDato il fatto che:\r\n\r\n\r\n\r\n{{ para }}\r\n\r\n\r\n\r\nRispondi\
+      \ alla domanda:\r\n\r\n\r\n\r\n{% if '_____' in question %}\r\n\r\n{{ question\
+      \ | trim(\".?!\") | replace(\"_____\", answer_choices | join(\" o \")) }}{{\
+      \ \"?\" }} \r\n\r\n{% else %}\r\n\r\n{{ question | trim(\".?!\") }} {{ answer_choices\
+      \ | join(\" o \") }}{{ \"?\" }} \r\n\r\n{% endif %}\r\n\r\n|||\r\n\r\n{{answer_choices[choices.label.index(answerKey)]}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: given_the_fact_answer_the_q
+    reference: ''
+  quartz_having_read_above_passage: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 5c794ff0-32b9-43d4-b496-1a4d246ecfc0
+    jinja: "\r\n{{ para }}\r\n\r\n\r\n\r\nAvendo letto il passaggio qui sopra, scegli\
+      \ la risposta corretta per la domanda seguente (le scelte sono {{ answer_choices\
+      \ | join(\" o \") }} ):\r\n\r\n\r\n\r\n{% if '_____' in question %}\r\n\r\n\
+      {{ question | trim(\".?!\") | replace(\"_____\", answer_choices | join(\" o\
+      \ \")) }}{{ \"?\" }} \r\n\r\n{% else %}\r\n\r\n{{ question | trim(\".?!\") }}\
+      \ {{ answer_choices | join(\" o \") }}{{ \"?\" }} \r\n\r\n{% endif %}\r\n\r\n\
+      |||\r\n\r\n{{answer_choices[choices.label.index(answerKey)]}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: having_read_above_passage
+    reference: ''
+  quartz_paragraph_question_plain_concat: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 01d6ae3e-87bb-456c-9722-92a214f6ff19
+    jinja: "\r\n{{ para }}\r\n\r\n{% if '_____' in question %}\r\n\r\n{{ question\
+      \ | trim(\".?!\") | replace(\"_____\", answer_choices | join(\" o \")) }}{{\
+      \ \"?\" }} \r\n\r\n{% else %}\r\n\r\n{{ question | trim(\".?!\")}} {{ answer_choices\
+      \ | join(\" o \") }}{{ \"?\" }} \r\n\r\n{% endif %}\r\n\r\n|||\r\n\r\n{{answer_choices[choices.label.index(answerKey)]}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: paragraph_question_plain_concat
+    reference: ''
+  quartz_read_passage_below_choose: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 39a67851-fdf5-4f0d-bda2-4902be3a6bff
+    jinja: "\r\nLeggi il passaggio qui sotto e scegli la risposta corretta per la\
+      \ domanda seguente (le scelte sono {{ answer_choices | join(\" o \") }} ):\r\
+      \n\r\n\r\n\r\n{{ para }}\r\n\r\n\r\n\r\n{% if '_____' in question %}\r\n\r\n\
+      {{ question | trim(\".?!\") | replace(\"_____\", answer_choices | join(\" o\
+      \ \")) }}{{ \"?\" }} \r\n\r\n{% else %}\r\n\r\n{{ question | trim(\".?!\") }}\
+      \ {{ answer_choices | join(\" o \") }}{{ \"?\" }} \r\n\r\n{% endif %}\r\n\r\n\
+      |||\r\n\r\n{{answer_choices[choices.label.index(answerKey)]}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: read_passage_below_choose
+    reference: ''
+  quartz_use_info_from_paragraph_question: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 22e29cab-f57f-4af7-92fc-72b131a96878
+    jinja: "\r\nUsa le informazioni ottenute dal paragrafo per rispondere a questa\
+      \ domanda.\r\n\r\n\r\n\r\nParagrafo :\r\n\r\n\r\n\r\n{{ para }}\r\n\r\n\r\n\r\
+      \nDomanda:\r\n\r\n\r\n\r\n{% if '_____' in question %}\r\n\r\n{{ question |\
+      \ trim(\".?!\") | replace(\"_____\", answer_choices | join(\" o \")) }}{{ \"\
+      ?\" }} \r\n\r\n{% else %}\r\n\r\n{{ question | trim(\".?!\") }} {{ answer_choices\
+      \ | join(\" o \") }}{{ \"?\" }} \r\n\r\n{% endif %}\r\n\r\n|||\r\n\r\n{{answer_choices[choices.label.index(answerKey)]}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: use_info_from_paragraph_question
+    reference: ''
+  quartz_use_info_from_question_paragraph: !Template
+    answer_choices: '{{choices.text | join("|||")}}'
+    id: 005b9776-2170-47f8-a5d2-03e83d0e55ae
+    jinja: "\r\nUsa le informazioni ottenute dal paragrafo per rispondere a questa\
+      \ domanda.\r\n\r\n\r\n\r\nDomanda:\r\n\r\n\r\n\r\n{% if '_____' in question\
+      \ %}\r\n\r\n{{ question | trim(\".?!\") | replace(\"_____\", answer_choices\
+      \ | join(\" o \")) }}{{ \"?\" }} \r\n\r\n{% else %}\r\n\r\n{{ question | trim(\"\
+      .?!\") }} {{ answer_choices | join(\" o \") }}{{ \"?\" }} \r\n\r\n{% endif %}\r\
+      \n\r\n\r\n\r\nParagrafo :\r\n\r\n\r\n\r\n{{ para }}\r\n\r\n|||\r\n\r\n{{answer_choices[choices.label.index(answerKey)]}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: use_info_from_question_paragraph
+    reference: ''
+  quoref_Answer Friend Question: !Template
+    answer_choices: null
+    id: d1abb8a0-03c4-41ef-865c-aa275278a0e4
+    jinja: "\r\nUn amico mi ha chiesto di rispondere a questa domanda: {{question}},\
+      \ usando l'articolo: {{context}}, quale sarebbe la risposta ?\r\n\r\n|||\r\n\
+      {{answers.text | choice}}\r\n\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: Answer Friend Question
+    reference: ''
+  quoref_Answer Question Given Context: !Template
+    answer_choices: null
+    id: 6f1d5031-1377-4b8a-9475-987b2275b8da
+    jinja: "Dato il seguente contesto:\r\n\r\n{{context}}\r\n\r\nrispondi alla seguente\
+      \ domanda:\r\n\r\n{{question}} |||\r\n{{answers.text | choice}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: Answer Question Given Context
+    reference: ''
+  quoref_Answer Test: !Template
+    answer_choices: null
+    id: b3ec0888-dd6f-466a-abd4-b2fbcacfdb8b
+    jinja: "\r\nHo un test nel quale mi viene proposto il seguente articolo, qual\
+      \ \xC3\xA8 la risposta alla domanda: {{question}} ?\r\n\r\n{{context}}|||\r\n\
+      {{answers.text | choice}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: Answer Test
+    reference: ''
+  quoref_Context Contains Answer: !Template
+    answer_choices: null
+    id: a3e5e25d-0a87-4cb8-89ab-3539fc4d23cb
+    jinja: "\r\nQuesto articolo: {{context}} contiene una risposta per la domanda:\
+      \ {{question}}, qual \xC3\xA8 ?\r\n|||\r\n{{answers.text | choice}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: Context Contains Answer
+    reference: ''
+  quoref_Find Answer: !Template
+    answer_choices: null
+    id: 9493f80a-daf5-4c30-a9fc-7bc5bc61b5e9
+    jinja: "\r\nIl seguente articolo contiene una risposta per la domanda: {{question}}\
+      \ , puoi trovarla per favore ? \r\n\r\n{{context}}|||\r\n{{answers.text | choice}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: Find Answer
+    reference: ''
+  quoref_Found Context Online: !Template
+    answer_choices: null
+    id: d055747f-7a32-4e12-aab1-fed35d42a445
+    jinja: "\r\nHo trovato il seguente articolo online, usalo per rispondere alla\
+      \ domanda: {{question}}\r\n\r\n{{context}}|||\r\n{{answers.text | choice}}\r\
+      \n\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: Found Context Online
+    reference: ''
+  quoref_Given Context Answer Question: !Template
+    answer_choices: null
+    id: aa26aab2-d2e7-4560-b7eb-0cbcff7c0f31
+    jinja: "\r\n{{question}}\r\n\r\nRispondi alla domanda soprastante basandoti sul\
+      \ contesto sottostante:\r\n\r\n{{context}} |||\r\n{{answers.text | choice}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: Given Context Answer Question
+    reference: ''
+  quoref_Guess Answer: !Template
+    answer_choices: null
+    id: 4120bebc-9c8f-44af-8d1a-a65e443ce010
+    jinja: "La risposta alla domanda: {{question}} \xE8 dentro l'articolo: {{context}},\
+      \ puoi indovinarla ?\r\n\r\n|||\r\n{{answers.text | choice}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: Guess Answer
+    reference: ''
+  quoref_Guess Title For Context: !Template
+    answer_choices: null
+    id: bf525757-8cde-4839-81fb-a85be3fd1192
+    jinja: "\r\nDato il contesto sottostante:\r\n\r\n{{context}}\r\n\r\nIndovina un\
+      \ titolo valido! |||\r\n{{title}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: false
+    name: Guess Title For Context
+    reference: ''
+  quoref_What Is The Answer: !Template
+    answer_choices: null
+    id: abdfa570-2de5-406c-9051-caa6a1362796
+    jinja: "\r\nQual \xC3\xA8 la risposta alla domanda: {{question}} sul seguente\
+      \ articolo ?\r\n\r\n{{context}}|||\r\n{{answers.text | choice}}\r\n\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: What Is The Answer
+    reference: ''
+  race_all_Is this the right answer: !Template
+    answer_choices: Yes ||| No
+    id: b808b05e-0d2a-459e-b345-2d83cdb20216
+    jinja: "{% set candidate = [\"A\", \"B\", \"C\", \"D\"] | choice %}\r\nArticolo:\
+      \ {{article}}\r\nDomanda: {{question}}\r\nS\xEC o no, la risposta \xE8 \"{{\
+      \ [options.0,options.1,options.2,options.3][{\"A\":0,\"B\":1,\"C\":2,\"D\":3}[candidate]]\
+      \ }}\"?\r\n|||\r\n{% if candidate == answer %}\r\nS\xEC\r\n{% else %}\r\nNo\r\
+      \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: false
+    name: Is this the right answer
+    reference: ''
+  race_all_Read the article and answer the question (no option): !Template
+    answer_choices: '{{ options | join("|||") }}'
+    id: 59b5c4e3-9539-449f-ac60-04e681c705b5
+    jinja: "Leggi il seguente articolo e rispondi alla domanda.\r\nArticolo: {{article}}\r\
+      \nDomanda: {{question}}\r\nRisposta:\r\n|||\r\n{{ answer_choices[{\"A\":0,\"\
+      B\":1,\"C\":2,\"D\":3}[answer]] }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Read the article and answer the question (no option)
+    reference: ''
+  race_all_Select the best answer: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: e5c4d6a3-ff68-4243-93aa-2629e72d0d70
+    jinja: "Leggi l'articolo seguente e seleziona la risposta migliore.\r\nArticolo:\
+      \ {{article}}\r\nDomanda: {{question}}\r\nOpzioni: {{\"A\"}}: {{options.0}}\r\
+      \n{{\"B\"}}: {{options.1}}\r\n{{\"C\"}}: {{options.2}}\r\n{{\"D\"}}: {{options.3}}\r\
+      \n|||\r\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Select the best answer
+    reference: ''
+  race_all_Select the best answer (generate span): !Template
+    answer_choices: '{{ options | join("|||") }}'
+    id: 81368f4b-817f-4c81-9db5-b86905bb975e
+    jinja: "Leggi l'articolo seguente e seleziona la risposta migliore.\r\nArticolo:\
+      \ {{article}}\r\nDomanda: {{question}}\r\n- {{answer_choices | join(\"\\n- \"\
+      )}}\r\n|||\r\n{{answer_choices[{\"A\":0,\"B\":1,\"C\":2,\"D\":3}[answer]]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Select the best answer (generate span)
+    reference: ''
+  race_all_Select the best answer (no instructions): !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: f79ba457-3c44-455f-a6ed-9c5f50d0e886
+    jinja: "{{article}}\r\n{{question}}\r\n{{\"A)\"}} {{options.0}}\r\n{{\"B)\"}}\
+      \ {{options.1}}\r\n{{\"C)\"}} {{options.2}}\r\n{{\"D)\"}} {{options.3}}\r\n\
+      |||\r\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Select the best answer (no instructions)
+    reference: ''
+  race_all_Taking a test: !Template
+    answer_choices: A ||| B ||| C ||| D
+    id: 00ede994-778f-4d25-82dc-bae7ba9e115f
+    jinja: "Sto facendo un test e devo indovinare la risposta giusta alla domanda\
+      \ dopo l'articolo.\r\nArticolo: {{article}}\r\nDomanda: {{question}}\r\nOpzioni:\
+      \ {{\"A\"}}: {{options.0}}\r\n{{\"B\"}}: {{options.1}}\r\n{{\"C\"}}: {{options.2}}\r\
+      \n{{\"D\"}}: {{options.3}}\r\n|||\r\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Taking a test
+    reference: ''
+  race_all_Write a multi-choice question (options given): !Template
+    answer_choices: null
+    id: cce2b02b-6c47-4941-83d6-5ecb2dfedadc
+    jinja: "Scrivi una domanda a scelta multipla per l'articolo seguente, con le opzioni\
+      \ e la risposta fornite:\r\nArticolo: {{article}}\r\nOpzioni:\r\n{{\"A\"}} {{options.0}}\r\
+      \n{{\"B\"}} {{options.1}}\r\n{{\"C\"}} {{options.2}}\r\n{{\"D\"}} {{options.3}}\r\
+      \nRisposta:\r\n{{answer}} {{ [options.0,options.1,options.2,options.3][{\"A\"\
+      :0,\"B\":1,\"C\":2,\"D\":3}[answer]] }}\r\nDomanda: \r\n|||\r\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Write a multi-choice question (options given)
+    reference: ''
+  race_all_Write a multi-choice question for the following article: !Template
+    answer_choices: null
+    id: 02ed2a0c-b3a4-4b86-8524-e8961f042ae9
+    jinja: "Scrivi una domanda a scelta multipla per l'articolo seguente:\r\nArticolo:\
+      \ {{article}}\r\n|||\r\nDomanda: \r\n{{question}}\r\nOpzioni:\r\n{{\"A\"}} {{options.0}}\r\
+      \n{{\"B\"}} {{options.1}}\r\n{{\"C\"}} {{options.2}}\r\n{{\"D\"}} {{options.3}}\r\
+      \nRisposta:\r\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Write a multi-choice question for the following article
+    reference: ''
+  ropes_background_new_situation_answer: !Template
+    answer_choices: null
+    id: a17aefbb-c571-4127-8170-379e2ec83774
+    jinja: "\r\n{% if answers.text %}\r\nPosso usare questo contesto: {{background}}\r\
+      \n\r\nOra ho una nuova situazione: {{situation}}\r\n\r\nRispondi a questa domanda:\
+      \ {{question}}|||\r\n{{ answers.text | choice }}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: background_new_situation_answer
+    reference: ''
+  ropes_background_situation_middle: !Template
+    answer_choices: null
+    id: b6da4f12-5384-46f5-a74e-c703c19d1698
+    jinja: "\r\n{% if answers.text %}\r\nTi viene data una nuova situazione: {{situation}}\r\
+      \n\r\ne un indizio : {{background}}\r\n\r\nPer favore, rispondi a questa domanda\
+      \ : {{question}}|||\r\n{{ answers.text | choice }}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: background_situation_middle
+    reference: ''
+  ropes_given_background_situation: !Template
+    answer_choices: null
+    id: 27fb16c6-a563-46ef-af73-42e15183824e
+    jinja: "\r\n{% if answers.text %}\r\nDato il contesto: {{background}}\r\n\r\n\
+      e la situazione: {{situation}}\r\n\r\nRispondi alla seguente domanda: {{question}}|||\r\
+      \n{{ answers.text | choice }}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: given_background_situation
+    reference: ''
+  ropes_new_situation_background_answer: !Template
+    answer_choices: null
+    id: cc747655-6472-4023-95e4-03cb85d5a1c5
+    jinja: "\r\n{% if answers.text %}\r\nHo una nuova situazione: {{situation}}\r\n\
+      \r\nMa posso usare questo contesto: {{background}}\r\n\r\nQual \xC3\xA8 una\
+      \ risposta per questa domanda: {{question}}|||\r\n{{ answers.text | choice }}\r\
+      \n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: new_situation_background_answer
+    reference: ''
+  ropes_plain_background_situation: !Template
+    answer_choices: null
+    id: a04f69ac-8122-4618-8426-185fc043feca
+    jinja: "\r\n{% if answers.text %}\r\n{{ background }}\r\n\r\n{{ situation }}\r\
+      \n\r\n{{ question }}\r\n|||\r\n{{ answers.text | choice }}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: plain_background_situation
+    reference: ''
+  ropes_plain_bottom_hint: !Template
+    answer_choices: null
+    id: 473f2c9c-9731-443c-a641-5e43770f7df6
+    jinja: "\r\n{% if answers.text %}\r\n{{ situation }}\r\n\r\n{{ question }}\r\n\
+      \r\nIndizio: {{ background }}\r\n|||\r\n{{ answers.text | choice}}\r\n{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: plain_bottom_hint
+    reference: ''
+  ropes_prompt_beginning: !Template
+    answer_choices: null
+    id: 0791ec30-6361-4e62-8dce-ca9cbf997acc
+    jinja: "\r\n{% if answers.text %}\r\nPer favore, rispondi correttamente alla seguente\
+      \ domanda riguardo al paragrafo sottostante. \r\n\r\n{{ question }}\r\n\r\n\
+      {{ situation }}\r\n\r\nIndizio: {{ background }}\r\n|||\r\n{{ answers.text |\
+      \ choice }}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: prompt_beginning
+    reference: ''
+  ropes_prompt_bottom_hint_beginning: !Template
+    answer_choices: null
+    id: 1e4944e7-4d5b-475c-8b04-4b523e96bc51
+    jinja: "\r\n{% if answers.text %}\r\nContesto: {{ background }}\r\n\r\nParagrafo:\
+      \ {{ situation }}\r\n\r\nDato il paragrafo soprastante, per favore rispondi\
+      \ correttamente alla seguente domanda: {{ question }}\r\n|||\r\n{{ answers.text\
+      \ | choice }}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: prompt_bottom_hint_beginning
+    reference: ''
+  ropes_prompt_mix: !Template
+    answer_choices: null
+    id: cc8f3c6b-b800-4b47-b6ec-e8febfdaad6f
+    jinja: "\r\n{% if answers.text %}\r\n{{ situation }}\r\n\r\nDato il paragrafo\
+      \ soprastante, per favore, rispondi correttamente alla seguente domanda: \r\n\
+      \r\n{{ question }}\r\n\r\nIndizio: {{ background }}\r\n|||\r\n{{ answers.text\
+      \ | choice }}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: prompt_mix
+    reference: ''
+  ropes_read_background_situation: !Template
+    answer_choices: null
+    id: f62e0adb-ca74-4280-8ed3-8b53411d87ce
+    jinja: "\r\n{% if answers.text %}\r\nHo letto questo articolo di contesto l'altro\
+      \ giorno: {{background}}\r\n\r\nSto affrontando una nuova situazione oggi: {{situation}}\r\
+      \n\r\nUsando la conoscenza che ho acquisito da questo articolo di contesto,\
+      \ come dovrei rispondere correttamente alla seguente domanda riguardante la\
+      \ mia nuova situazione: {{question}}|||\r\n{{ answers.text | choice }}\r\n{%\
+      \ endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: read_background_situation
+    reference: ''
+  rotten_tomatoes_Movie Expressed Sentiment: !Template
+    answer_choices: negative ||| positive
+    id: 94e190d5-2196-486e-908b-759f288eac6e
+    jinja: "\r\n{{text}} Il sentimento espresso dal film \xC3\xA8 ||| {{ answer_choices\
+      \ [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment
+    reference: ''
+  rotten_tomatoes_Movie Expressed Sentiment 2: !Template
+    answer_choices: negative ||| positive
+    id: b60cad41-6bca-422a-aef7-cb113fcc32b0
+    jinja: "\r\nQuale sentimento esprime is seguente film? {{text}} ||| {{ answer_choices\
+      \ [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Movie Expressed Sentiment 2
+    reference: ''
+  rotten_tomatoes_Reviewer Enjoyment: !Template
+    answer_choices: They didn't like it ||| They loved it
+    id: 7a8ccb1c-6737-4863-b08a-61d4a2839204
+    jinja: "\r\n{{text}} Come si sente il recensore riguardo al film? ||| {{ answer_choices\
+      \ [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment
+    reference: ''
+  rotten_tomatoes_Reviewer Enjoyment Yes No: !Template
+    answer_choices: No ||| Yes
+    id: 59e2aa7c-696f-4b85-87e9-688ea802d968
+    jinja: "\r\n{{text}} Il recensore ha apprezzato il film? ||| {{ answer_choices\
+      \ [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Enjoyment Yes No
+    reference: ''
+  rotten_tomatoes_Reviewer Expressed Sentiment: !Template
+    answer_choices: negative ||| positive
+    id: c75e322d-d6b4-4a28-b5a0-27fddfee694d
+    jinja: "\r\n{{text}} Qual \xC3\xA8 il sentimento espresso dal recensore riguardo\
+      \ al film? ||| {{ answer_choices [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Expressed Sentiment
+    reference: ''
+  rotten_tomatoes_Reviewer Opinion bad good choices: !Template
+    answer_choices: bad ||| good
+    id: 10adbcf1-b839-4522-bd76-567f0c760474
+    jinja: "\r\n{{text}} Il recensore ha trovato questo film {{\"bello o brutto\"\
+      }}? ||| {{ answer_choices [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Opinion bad good choices
+    reference: ''
+  rotten_tomatoes_Reviewer Sentiment Feeling: !Template
+    answer_choices: negative ||| positive
+    id: e05ec7b9-5a8d-4670-9723-0237c1bb1eca
+    jinja: "\r\n{{text}} Come si sente lo spettatore riguardo al film? ||| {{ answer_choices\
+      \ [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Reviewer Sentiment Feeling
+    reference: ''
+  rotten_tomatoes_Text Expressed Sentiment: !Template
+    answer_choices: negative ||| positive
+    id: 162f7f89-4a93-42e9-9525-ba12e243ee48
+    jinja: "\r\n{{text}} Qual \xC3\xA8 il sentimento espresso in questo testo? |||\
+      \ {{ answer_choices [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Text Expressed Sentiment
+    reference: ''
+  rotten_tomatoes_Writer Expressed Sentiment: !Template
+    answer_choices: negative ||| positive
+    id: a8f6927e-7eca-4975-a93c-f520f8be480d
+    jinja: "\r\n{{text}} Quali sentimenti esprime l'autore riguardo al film? ||| {{\
+      \ answer_choices [label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Writer Expressed Sentiment
+    reference: ''
+  samsum_Generate a summary for this dialogue: !Template
+    answer_choices: null
+    id: 8d829dcb-ea64-457d-b025-f16e31c2834a
+    jinja: "\r\nGenera un riassunto per questo dialogo:\r\n{{dialogue}}\r\n|||{{summary}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Generate a summary for this dialogue
+    reference: ''
+  samsum_Given the above dialogue write a summary: !Template
+    answer_choices: null
+    id: 182a251f-2f76-4b36-8d2e-417f8d43f729
+    jinja: "\r\n{{dialogue}}\r\nDato il dialogo soprastante, scrivi un riassunto.\
+      \ |||\r\n{{summary}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Given the above dialogue write a summary
+    reference: ''
+  samsum_Sum up the following dialogue: !Template
+    answer_choices: null
+    id: bd891653-49b6-40bb-968f-8e6632c75659
+    jinja: "Riassumi il seguente dialogo: \r\n\r\n{{dialogue}}\r\n\r\n|||{{summary}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      original_task: true
+    name: Sum up the following dialogue
+    reference: ''
+  'samsum_Summarize this dialogue:': !Template
+    answer_choices: null
+    id: 01faf0cd-d9d8-4245-b86f-e7e13c2972ff
+    jinja: "\r\nRiassumi il seguente dialogo: {{dialogue}} |||\r\n{{summary}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      original_task: true
+    name: 'Summarize this dialogue:'
+    reference: ''
+  'samsum_Summarize:': !Template
+    answer_choices: null
+    id: 72eda731-894d-4260-9113-9e492822f80e
+    jinja: "\r\nRiassumi: {{dialogue}}|||\r\n{{summary}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      original_task: true
+    name: 'Summarize:'
+    reference: ''
+  samsum_To sum up this dialog: !Template
+    answer_choices: null
+    id: 7bd51f5b-5bac-429e-b8f9-dd6782b92a59
+    jinja: "\r\n{{dialogue}}\r\nPer riassumere questo dialogo:\r\n|||{{summary}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      original_task: true
+    name: To sum up this dialog
+    reference: ''
+  samsum_Write a dialogue that match this summary: !Template
+    answer_choices: null
+    id: 9f571a72-6813-4307-9aae-753ca0f737c5
+    jinja: "\r\nScrivi un dialogo che corrisponda a questo riassunto: {{summary}}\
+      \ |||\r\n{{dialogue}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      original_task: false
+    name: Write a dialogue that match this summary
+    reference: ''
+  social_i_qa_Check if a random answer is valid or not: !Template
+    answer_choices: Yes ||| No
+    id: 991f78cc-82d3-482f-b1de-f37a7179a316
+    jinja: "{% set random_answer_id = range(0,2) | choice%}\r\n{% set answers = [answerA,\
+      \ answerB, answerC] %}\r\n{{context}}\r\n\r\nData la domanda \"{{question}}\"\
+      , \xE8 \"{{answers[random_answer_id]}}\" una risposta valida?\r\n\r\n|||\r\n\
+      \r\n{% if (label | int) - 1 == random_answer_id %}\r\n    Yes\r\n{% else %}\r\
+      \n    No\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Check if a random answer is valid or not
+    reference: ''
+  social_i_qa_Generate answer: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: cbad777f-5794-4d71-bf3d-54da6043e5f1
+    jinja: "{{context}}\r\n\r\nDato il contesto: {{question}}\r\n\r\n|||\r\n\r\n{{answer_choices[label\
+      \ | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Generate answer
+    reference: ''
+  social_i_qa_Generate the question from the answer: !Template
+    answer_choices: null
+    id: b980667e-b4ca-44ce-aba9-5b47d3ccf406
+    jinja: "{{context}}\r\n\r\nDato che la risposta a una domanda \xE8 \"{{{\"1\"\
+      : answerA, \"2\": answerB, \"3\": answerC}[label]}}\", qual \xE8 la domanda?\r\
+      \n\r\n|||\r\n\r\n{{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: Generate the question from the answer
+    reference: ''
+  social_i_qa_I was wondering: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: 605691e9-df59-415d-a622-530734c7df38
+    jinja: "Ho sentito che {{context}}\r\n\r\nE mi chiedevo {{question}}\r\n\r\n|||\r\
+      \n\r\n{{answer_choices[label | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: I was wondering
+    reference: ''
+  social_i_qa_Show choices and generate answer: !Template
+    answer_choices: '{{answerA}} ||| {{answerB}} ||| {{answerC}}'
+    id: 666f415b-e3ac-47bf-a79b-19024c4a4143
+    jinja: "{{context}}\r\n\r\nDato il contesto: {{question}}\r\n\r\nRisposte possibili:\
+      \ {{answer_choices | join(\", \")}}\r\n\r\n|||\r\n\r\n{{answer_choices[label\
+      \ | int - 1]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Show choices and generate answer
+    reference: ''
+  social_i_qa_Show choices and generate index: !Template
+    answer_choices: A ||| B ||| C
+    id: e2316120-2461-4664-943d-962a85008e23
+    jinja: "Contesto: {{context}}\r\n\r\nDomanda: {{question}}\r\n\r\nQuale di queste\
+      \ risposte risponde meglio alla domanda in base al contesto?\r\n\r\nA: {{answerA}}\r\
+      \n\r\nB: {{answerB}}\r\n\r\nC: {{answerC}}\r\n\r\n|||\r\n\r\n{{{\"1\": \"A\"\
+      , \"2\": \"B\", \"3\": \"C\"}[label]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Show choices and generate index
+    reference: ''
+  squad_answer_given_context_and_question: !Template
+    answer_choices: null
+    id: e153c4cd-6757-487a-8fe6-da7e88ec3e47
+    jinja: "{{context}}\r\n\r\nD: {{question}}\r\n\r\nIn riferimento al passaggio\
+      \ in alto, la risposta corretta alla domanda posta \xE8 ||| {{answers[\"text\"\
+      ][0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_given_context_and_question
+    reference: ''
+  squad_answer_question_given_context: !Template
+    answer_choices: null
+    id: 3d85b5b0-51db-4d72-8ead-d0b3654025ee
+    jinja: "Riferisciti al passaggio sottostante e rispondi alla domanda seguente:\r\
+      \n\r\nPassaggio: {{context}}\r\n\r\nDomanda: {{question}}\r\n|||\r\n{{answers[\"\
+      text\"][0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_question_given_context
+    reference: ''
+  squad_answer_the_question: !Template
+    answer_choices: null
+    id: 7c13b5ba-abfc-4b68-9a36-5430a0b0e580
+    jinja: "{{context}}\r\n\r\nIn riferimento al contesto in alto, {{question}} |||\
+      \ \r\n\r\n{{answers.text[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: answer_the_question
+    reference: ''
+  squad_given_context_answer_question_variation: !Template
+    answer_choices: null
+    id: 5a3c2d11-9469-46f6-88c2-f7e159a9742b
+    jinja: "{{context}}\r\n\r\nD: {{question}}\r\n\r\nR: ||| {{answers[\"text\"][0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: given_context_answer_question_variation
+    reference: ''
+  squad_given_context_generate_question: !Template
+    answer_choices: null
+    id: 64ed14d6-c835-424d-a55d-ded1b1bd2546
+    jinja: "{{context}}\r\n\r\nGenera una domanda dal passaggio in alto : ||| {{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: given_context_generate_question
+    reference: ''
+  squad_jeopardy: !Template
+    answer_choices: null
+    id: 69041854-6e48-4902-92c2-adb46457bea3
+    jinja: "{{context}}\r\n\r\nDal passaggio in alto, una domanda ragionevole con\
+      \ \"{{answers[\"text\"][0]}}\" come risposta sarebbe: ||| {{question}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: jeopardy
+    reference: jeopardy style- wiki_qa
+  super_glue_boolq_GPT-3 Style: !Template
+    answer_choices: No ||| Yes
+    id: 492f0f88-4370-46cd-839b-1de37a55aeda
+    jinja: "{{ passage }} \r\nDomanda: {{ question }}\r\nRisposta: ||| \r\n{% if label\
+      \ != -1 %}\r\n{{ answer_choices[label] }}\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3 Style
+    reference: Same as Figure G29, p. 58 of the GPT-3 paper
+  "super_glue_boolq_I wonder\u2026": !Template
+    answer_choices: No ||| Yes
+    id: 6cb6a026-c070-470a-b75d-bb8fdf424e35
+    jinja: "{{ passage }} \r\n\r\nAvendo leto ci\xF2, mi chiedo {{ question }}? |||\r\
+      \n{% if label != -1 %}\r\n{{ answer_choices[label] }} \r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "I wonder\u2026"
+    reference: ''
+  super_glue_boolq_after_reading: !Template
+    answer_choices: False ||| True
+    id: 3e386463-1715-4578-9cba-07d11a0d3b61
+    jinja: "Passaggio: {{passage}}\r\n\r\nDopo aver letto questo passaggio, ho una\
+      \ domanda: {{question}}? Vero o Falso? |||\r\n{% if label != -1 %}\r\n{{answer_choices[label]}}\r\
+      \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: after_reading
+    reference: ''
+  super_glue_boolq_based on the following passage: !Template
+    answer_choices: No ||| Yes
+    id: 9a1bf459-8047-437c-9def-f21e960429cc
+    jinja: "In base al passaggio seguente, {{ question }}? {{ passage }}\r\n\r\n|||\r\
+      \n{% if label != -1 %}\r\n{{ answer_choices[label] }}\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based on the following passage
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  super_glue_boolq_based on the previous passage: !Template
+    answer_choices: No ||| Yes
+    id: b2b3cb60-d6e3-491c-a09a-8201e13e417e
+    jinja: "{{ passage }}\r\nIn base al passaggio precedente, {{ question }}? |||\
+      \ {% if label != -1 %}{{ answer_choices[label] }}\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based on the previous passage
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  "super_glue_boolq_could you tell me\u2026": !Template
+    answer_choices: No ||| Yes
+    id: 7d21d974-0624-4d4f-9e8c-644e2d009cb5
+    jinja: "{{ passage }} \r\n\r\nAvendo letto ci\xF2, potresti dirmi {{ question\
+      \ }}? ||| {% if label != -1 %}{{ answer_choices[label] }}\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "could you tell me\u2026"
+    reference: ''
+  super_glue_boolq_exam: !Template
+    answer_choices: No ||| Yes
+    id: 922d3e87-ac58-4731-84d1-f0a40e47afb5
+    jinja: "ESAME\r\n1. Rispondi con s\xEC o no.\r\n\r\nDocumento: {{passage}}\r\n\
+      Domanda: {{question}}? ||| \r\n{% if label != -1 %}\r\n{{answer_choices[label]}}\r\
+      \n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: exam
+    reference: ''
+  super_glue_boolq_exercise: !Template
+    answer_choices: False ||| True
+    id: 9f4c6b0a-437b-40c0-b467-db4b7218d38d
+    jinja: "Esercizio: leggi il testo e rispondi alla domanda con Vero o Falso.\r\n\
+      \r\nTesto: {{passage}}\r\nDomanda: {{question}}? |||\r\n{% if label != -1 %}\r\
+      \n{{answer_choices[label]}}\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: exercise
+    reference: ''
+  super_glue_boolq_valid_binary: !Template
+    answer_choices: False ||| True
+    id: eb78772c-e81e-4b8a-a77b-b75efd1c212a
+    jinja: "{{passage}}\r\n\r\nD: {{question}}? Vero o Falso? |||\r\n{% if label !=\
+      \ -1 %}\r\n{{answer_choices[label]}}\r\n{% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: valid_binary
+    reference: ''
+  super_glue_boolq_yes_no_question: !Template
+    answer_choices: No ||| Yes
+    id: 7cf7acdf-e3a2-459f-a3e8-2e2d27dd6aa5
+    jinja: "Testo: {{passage}}\r\n\r\nRispondi alla seguente domanda s\xEC/no: {{question}}?\
+      \ S\xEC o no? |||\r\n{% if label != -1 %}\r\n{{answer_choices[label]}}\r\n{%\
+      \ endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: yes_no_question
+    reference: ''
+  super_glue_cb_GPT-3 style: !Template
+    answer_choices: True ||| False ||| Neither
+    id: 75db2bc2-3caa-4956-9653-13c7dd6255df
+    jinja: "\r\n{{premise}}\r\n\r\nDomanda: {{hypothesis}} Vero, Falso, o nessuno\
+      \ dei due? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3 style
+    reference: 'Same as reported in Figure G7 of the GPT-3 paper, except that there
+      is no task identifying tokens like "anli R1: ".'
+  super_glue_cb_MNLI crowdsource: !Template
+    answer_choices: Correct ||| Incorrect ||| Inconclusive
+    id: bee62bfa-5307-4e1c-97b2-2ad2f7bcb179
+    jinja: "\r\n{{premise}} Usando solo la descrizione qui sopra e ci\xC3\xB2  che\
+      \ sai riguardo al mondo, \"{{hypothesis}}\" \xC3\xA8 sicuramente corretta, non\
+      \ corretta, o inconclusiva? ||| {% if label !=-1 %}{{ answer_choices[label]\
+      \ }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: MNLI crowdsource
+    reference: Adapted from Williams et al. 2018's instructions to crowdsourcing workers.
+  super_glue_cb_always/sometimes/never: !Template
+    answer_choices: Always ||| Never ||| Sometimes
+    id: 6b0c6191-183d-4731-8050-ab17c909335c
+    jinja: "\r\nSupponi che sia vero {{premise}} Allora, \"{{hypothesis}}\" \xC3\xA8\
+      \ {{\"sempre\"}} vero, \xC3\xA8 vero {{\"a volte\"}}, o non \xC3\xA8 {{\"mai\"\
+      }} vero? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: always/sometimes/never
+    reference: Sanh et al. 2021
+  super_glue_cb_based on the previous passage: !Template
+    answer_choices: Yes ||| No ||| Maybe
+    id: 358860fd-61ad-45fd-92a6-a72ca9107ebc
+    jinja: "\r\n{{premise}} Basandosi sul passaggio precedente, \xC3\xA8 vero che\
+      \ \"{{hypothesis}}\"? S\xC3\xAC, no, o forse? ||| {% if label !=-1 %}{{ answer_choices[label]\
+      \ }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based on the previous passage
+    reference: "Adapted from the BoolQ prompts in Schick & Sch\xFCtze 2021."
+  super_glue_cb_can we infer: !Template
+    answer_choices: Yes ||| No ||| Maybe
+    id: 2e76cd0f-68ca-4f03-83ed-11cf15b25a84
+    jinja: "\r\nSupponi {{premise}} Si pu\xC3\xB2 concludere che \"{{hypothesis}}\"\
+      ? S\xC3\xAC, no, o forse? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %} \r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: can we infer
+    reference: Webson & Pavlick 2021
+  super_glue_cb_claim true/false/inconclusive: !Template
+    answer_choices: True ||| False ||| Inconclusive
+    id: 3f43a599-ffdb-490e-8952-c0ce41dd4621
+    jinja: "\r\n{{premise}} Basandosi su questa informazione, possiamo affermare che\
+      \ \xC3\xA8: \"{{hypothesis}}\" {{\"vero\"}}, {{\"falso\"}}, o {{\"inconclusivo\"\
+      }}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: claim true/false/inconclusive
+    reference: Sanh et al. 2021
+  super_glue_cb_consider always/sometimes/never: !Template
+    answer_choices: Always ||| Never ||| Sometimes
+    id: 87237a07-7cce-470a-80ac-3e5e3a5283ba
+    jinja: "\r\n{{premise}} \r\n\r\n\r\n\r\nTenendo in considerazione il testo qui\
+      \ sopra, considera: {{hypothesis}} \xC3\u02C6 {{\"sempre\"}} corretto, lo \xC3\
+      \xA8 {{\"a volte\"}}, o non lo \xC3\xA8 {{\"mai\"}}? ||| {% if label !=-1 %}{{\
+      \ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: consider always/sometimes/never
+    reference: Sanh et al. 2021
+  super_glue_cb_does it follow that: !Template
+    answer_choices: Yes ||| No ||| Maybe
+    id: 404eed25-558a-4d39-9515-7de46d60d4e0
+    jinja: "\r\nDato che {{premise}} Segue che {{hypothesis}} S\xC3\xAC, no, o forse?\
+      \ ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does it follow that
+    reference: Sanh et al. 2021
+  super_glue_cb_does this imply: !Template
+    answer_choices: Yes ||| No ||| Maybe
+    id: a485d120-6eef-4ff6-8684-42df1639b101
+    jinja: "\r\n{{premise}} \r\n\r\n\r\n\r\nDomanda: Implica che \"{{hypothesis}}\"\
+      ? S\xC3\xAC, no, o forse? ||| {% if label !=-1 %}{{answer_choices[label]}}{%\
+      \ endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does this imply
+    reference: Sanh et al. 2021
+  super_glue_cb_guaranteed true: !Template
+    answer_choices: Yes ||| No ||| Maybe
+    id: 8798b8a4-1f59-4c72-9c1b-3e3044a7462a
+    jinja: "\r\nDato {{premise}} \xC3\u02C6 sicuramente vero che \"{{hypothesis}}\"\
+      ? S\xC3\xAC, no, o forse? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: guaranteed true
+    reference: Webson & Pavlick 2021
+  super_glue_cb_guaranteed/possible/impossible: !Template
+    answer_choices: Guaranteed ||| Impossible ||| Possible
+    id: 90ab1002-093c-4e54-b48f-626655e36b65
+    jinja: "\r\nAssumi che sia vero {{premise}} \r\n\r\n\r\n\r\nPerci\xC3\xB2, \"\
+      {{hypothesis}}\" \xC3\xA8 {{\"sicuro\"}}, {{\"possibile\"}}, o {{\"impossibile\"\
+      }}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: guaranteed/possible/impossible
+    reference: Sanh et al. 2021
+  super_glue_cb_justified in saying: !Template
+    answer_choices: Yes ||| No ||| Maybe
+    id: 5c9b1fa9-93f0-4f82-b9e3-e0967e4d7260
+    jinja: "\r\n{{premise}} Siamo giustificati nel dire che \"{{hypothesis}}\"? S\xC3\
+      \xAC, no, o forse? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: justified in saying
+    reference: Webson & Pavlick 2021
+  super_glue_cb_must be true: !Template
+    answer_choices: Yes ||| No ||| Maybe
+    id: 8e3b8d3d-1362-47dc-922a-82c03f965989
+    jinja: "\r\nDato che {{premise}} Perci\xC3\xB2, deve essere vero che \"{{hypothesis}}\"\
+      ? S\xC3\xAC, no, o forse? ||| {% if label !=-1 %}{{ answer_choices[label] }}{%\
+      \ endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: must be true
+    reference: Sanh et al. 2021
+  super_glue_cb_should assume: !Template
+    answer_choices: Yes ||| No ||| Maybe
+    id: e503b148-8e6c-43b5-9ed6-312794c54d9b
+    jinja: "\r\nDato {{premise}} Possiamo assumere che \"{{hypothesis}}\" \xC3\xA8\
+      \ vero? S\xC3\xAC, no, o forse? ||| {% if label !=-1 %}{{ answer_choices[label]\
+      \ }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: should assume
+    reference: Webson & Pavlick 2021
+  super_glue_cb_take the following as truth: !Template
+    answer_choices: True ||| False ||| Inconclusive
+    id: ea56b7f3-6e07-45bc-b619-c527eac4a41b
+    jinja: "\r\nPrendi la premessa seguente come vera: {{premise}}\r\n\r\nAllora l'affermazione\
+      \ seguente: \"{{hypothesis}}\" \xC3\xA8 {{\"vera\"}}, {{\"falsa\"}}, or {{\"\
+      inconclusiva\"}}? ||| {% if label !=-1 %}{{ answer_choices[label] }}{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: take the following as truth
+    reference: Sanh et al. 2021
+  "super_glue_copa_C1 or C2? premise, so/because\u2026": !Template
+    answer_choices: '{{choice1 }} ||| {{choice2}}'
+    id: 744047dc-1298-45a2-8d68-d67e3f834ded
+    jinja: "\r\n\"{{ answer_choices[0] }}\" o \"{{ answer_choices[1] }}\"? {{ premise\
+      \ }} {% if question == \"causa\" %} perch\xC3\xA8 {% else %} quindi {% endif\
+      \ %} ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "C1 or C2? premise, so/because\u2026"
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  super_glue_copa_best_option: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 8ce80f8a-239e-4393-892c-f63dbb0d9929
+    jinja: "\r\n{{ premise }} \r\n\r\n\r\n\r\nQual'\xC3\xA8 la migliore opzione?\r\
+      \n\r\n- {{choice1}}\r\n\r\n- {{choice2}}\r\n\r\n\r\n\r\nStiamo cercando {% if\
+      \ question == \"cause\" %} una causa {% else %} una conseguenza {% endif %}\r\
+      \n\r\n||| {% if label != -1 %}{{answer_choices[label]}}{%endif%}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: best_option
+    reference: ''
+  super_glue_copa_cause_effect: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: a61d8c21-da25-47bf-b5fe-14a8edd650af
+    jinja: "\r\n{{ premise }}\r\n\r\n\r\n\r\nSeleziona la pi\xC3\xB9 plausibile {%\
+      \ if question == \"causa\" %} causa: {% else %} conseguenza: {% endif %}\r\n\
+      \r\n- {{choice1}}\r\n\r\n- {{choice2}} ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{%endif%}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: cause_effect
+    reference: ''
+  super_glue_copa_choose: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: f32348cd-d3cb-4619-87b9-e24f99c78567
+    jinja: "\r\n{{ premise }} {% if question == \"causa\" %} perch\xC3\xA8... {% else\
+      \ %} quindi... {% endif %}\r\n\r\nScegli fra:\r\n\r\n- {{choice1}}\r\n\r\n-\
+      \ {{choice2}} ||| {% if label != -1 %}{{ answer_choices[label] }}{%endif%}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose
+    reference: ''
+  super_glue_copa_exercise: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 0edd8660-f299-4819-a5ac-633c11177228
+    jinja: "\r\nEsercizio: scegli l'alternativa pi\xC3\xB9 plausibile.\r\n\r\n\r\n\
+      \r\n{{ premise }} {% if question == \"causa\" %} perch\xC3\xA8... {% else %}\
+      \ quindi... {% endif %}\r\n\r\n- {{choice1}}\r\n\r\n- {{choice2}} ||| {% if\
+      \ label != -1 %}{{ answer_choices[label] }}{%endif%}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: exercise
+    reference: ''
+  super_glue_copa_i_am_hesitating: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 4d879cbe-2fd7-424a-9d78-3f5200313fba
+    jinja: "\r\n{{ premise }} \r\n\r\n\r\n\r\nSono indeciso fra due opzioni. Aiutami\
+      \ a scegliere la pi\xC3\xB9 plausibile {% if question == \"causa\" %} causa:\
+      \ {% else %} conseguenza: {% endif %}\r\n\r\n- {{choice1}}\r\n\r\n- {{choice2}}\
+      \ ||| {% if label != -1 %}{{ answer_choices[label] }}{%endif%}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: i_am_hesitating
+    reference: ''
+  super_glue_copa_more likely: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: a1f9951e-2b6b-4530-9636-9cdf4c1658c5
+    jinja: "\r\nScegli la continuazione pi\xC3\xB9 probabile della frase qui sotto:\r\
+      \n\r\n{{ premise }} {% if question == \"causa\" %} come risultato di: {% else\
+      \ %} come conseguenza: {% endif %}\r\n\r\n- {{choice1}}\r\n\r\n- {{choice2}}\
+      \ ||| {% if label != -1 %}{{ answer_choices[label] }}{%endif%}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: more likely
+    reference: ''
+  super_glue_copa_plausible_alternatives: !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 66ea075e-4d03-4a78-b1fa-9a5228cf0c9d
+    jinja: "\r\n{{ premise }} {% if question == \"causa\" %} Questo \xC3\xA8 successo\
+      \ perch\xC3\xA8... {% else %} Come conseguenza... {% endif %}\r\n\r\nAiutami\
+      \ a scegliere l'opzione pi\xC3\xB9 plausibile:\r\n\r\n- {{choice1}}\r\n\r\n\
+      - {{choice2}} ||| {% if label != -1 %}{{ answer_choices[label] }}{%endif%}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: plausible_alternatives
+    reference: ''
+  "super_glue_copa_\u2026As a result, C1 or C2?": !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 84da62c2-9440-4cfc-bdd4-d70c65e33a82
+    jinja: "\r\n{% if question == \"conseguenza\" %} \r\n\r\n{{ premise }} Come risultato,\
+      \ \"{{ answer_choices[0] }}\" o \"{{ answer_choices[1] }}\"? ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{%endif%}\r\n\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "\u2026As a result, C1 or C2?"
+    reference: ''
+  "super_glue_copa_\u2026What could happen next, C1 or C2?": !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 150789fe-e309-47a1-82c9-0a4dc2c6b12b
+    jinja: "\r\n{% if question == \"conseguenza\" %} \r\n\r\n{{ premise }} Cosa potrebbe\
+      \ succedere dopo, \"{{ answer_choices[0] }}\" o \"{{ answer_choices[1] }}\"\
+      ? ||| {% if label != -1 %}{{ answer_choices[label] }}{%endif%}\r\n\r\n{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "\u2026What could happen next, C1 or C2?"
+    reference: ''
+  "super_glue_copa_\u2026which may be caused by": !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: 8cf2ba73-aee5-4651-b5d4-b1b88afe4abb
+    jinja: "\r\n{% if question == \"cause\" %} \r\n\r\n{{ premise }} Che potrebbe\
+      \ essere causato da \"{{ answer_choices[0] }}\" o \"{{ answer_choices[1] }}\"\
+      ? ||| {% if label != -1 %}{{ answer_choices[label] }}{%endif%}\r\n\r\n{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "\u2026which may be caused by"
+    reference: ''
+  "super_glue_copa_\u2026why? C1 or C2": !Template
+    answer_choices: '{{choice1}} ||| {{choice2}}'
+    id: a8bf11c3-bea2-45ba-a533-957d8bee5e2e
+    jinja: "\r\n{% if question == \"causa\" %} \r\n\r\n{{ premise }} Perch\xC3\xA8\
+      ? \"{{ answer_choices[0] }}\" o \"{{ answer_choices[1] }}\"? ||| {% if label\
+      \ != -1 %}{{ answer_choices[label] }}{%endif%}\r\n\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: "\u2026why? C1 or C2"
+    reference: ''
+  "super_glue_record_Can you figure out\u2026": !Template
+    answer_choices: '{{ entities | join("|||") }}'
+    id: e68d13c5-df75-4de0-b59e-f2eaf4af6ce7
+    jinja: "\r\n{{ passage }} \r\n{{ query }} \r\nRiesci a capire cosa \"{{\"@placeholder\"\
+      }}\" significhi? Significa ||| {% if ( answers | length ) > 0 %}{{ answers |\
+      \ choice }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: "Can you figure out\u2026"
+    reference: ''
+  super_glue_record_In the question above, the placeholder stands for: !Template
+    answer_choices: '{{ entities | join("|||") }}'
+    id: 91555c1c-c1e4-469b-a2a4-fc952ce1a145
+    jinja: "\r\n{{ passage }} \r\n{{ query }} \r\nNella domanda soprastante,  \"{{\"\
+      @placeholder\"}}\" indica ||| {% if ( answers | length ) > 0 %}{{ answers |\
+      \ choice }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: In the question above, the placeholder stands for
+    reference: ''
+  super_glue_record_What could the placeholder be?: !Template
+    answer_choices: '{{ entities | join("|||") }}'
+    id: 99dd38ce-32f3-4d58-93c5-59821002b9cc
+    jinja: "\r\n{{ passage }} \r\n{{ query }} \r\nCosa pu\xC3\xB2 essere \"{{\"@placeholder\"\
+      }}\" ? {{ entities | join(\", \") }}? ||| {% if ( answers | length ) > 0 %}{{\
+      \ answers | choice }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: What could the placeholder be?
+    reference: ''
+  super_glue_record_Which one is the placeholder?: !Template
+    answer_choices: '{{ entities | join("|||") }}'
+    id: 014b669e-2e3b-40ce-bdde-418966c7d666
+    jinja: "\r\n{{ passage }} \r\n{{ query }} \r\nQuale di questi \xC3\xA8 \"{{\"\
+      @placeholder\"}}\"? {{ entities | join(\", \") }}? ||| {% if ( answers | length\
+      \ ) > 0 %} {{ answers | choice }}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: Which one is the placeholder?
+    reference: ''
+  super_glue_record_choose_between: !Template
+    answer_choices: '{{ entities | join("|||") }}'
+    id: 441c70e3-095a-44a1-8163-bc3b666b7ea1
+    jinja: "\r\n{{ passage }} \r\n{{ query }} \r\n\r\nDevi decidere a cosa \"{{\"\
+      @placeholder\"}}\" si sta riferendo:\r\n- {{answer_choices | join(\"\\n- \"\
+      )}}\r\n||| {% if ( answers | length ) > 0 %}{{ answers | choice }}\r\n{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: choose_between
+    reference: ''
+  super_glue_record_corrupted: !Template
+    answer_choices: '{{ entities | join("|||") }}'
+    id: 11e27d59-b1f5-43a1-9ccc-17f1c3249173
+    jinja: "\r\nIl seguente documento \xC3\xA8 stato corrotto. Dimmi a cosa \"{{\"\
+      @placeholder\"}}\" si sta riferendo.\r\n\r\nDocumento: {{ passage }} \r\n{{\
+      \ query }} \r\n||| {% if ( answers | length ) > 0 %}{{ answers | choice }}\r\
+      \n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: corrupted
+    reference: ''
+  super_glue_record_exercise: !Template
+    answer_choices: '{{entities | join("|||")}}'
+    id: d3fce74e-0d9d-404a-a009-9ebbf5794c2c
+    jinja: "\r\nEsercizio: Estrai dal test l'entit\xC3\_ corretta a cui \"{{\"@placeholder\"\
+      }}\" si sta riferendo.\r\n\r\n{{ passage }}\r\n{{ query }}\r\n||| {% if ( answers\
+      \ | length ) > 0 %}\r\n{{ answers | choice }}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: exercise
+    reference: ''
+  super_glue_record_pick_one_option: !Template
+    answer_choices: '{{entities | join("|||")}}'
+    id: de5b635e-c2f4-40bb-81ac-650f1b45564b
+    jinja: "\r\n{{ passage }}\r\n{{ query }}\r\n\r\nScegli l'opzione, \"{{\"@placeholder\"\
+      }}\" si riferisce a:\r\n- {{answer_choices | join(\"\\n- \")}}\r\n||| {% if\
+      \ ( answers | length ) > 0 %}\r\n{{ answers | choice }}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: pick_one_option
+    reference: ''
+  "super_glue_record_the placeholder refers to\u2026": !Template
+    answer_choices: '{{ entities | join("|||") }}'
+    id: a5ed27ed-162b-4ac1-9c7a-85059d5214be
+    jinja: "\r\n{{ passage }} \r\n{{ query }} \r\nQui, il segnaposto si riferisce\
+      \ a ||| {% if ( answers | length ) > 0 %}{{ answers | choice }}\r\n{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: "the placeholder refers to\u2026"
+    reference: ''
+  super_glue_record_trying_to_decide: !Template
+    answer_choices: '{{entities | join("|||")}}'
+    id: 9b688cf3-28bf-4f33-94cf-e73e4fa8c608
+    jinja: "\r\n{{ passage }}\r\n{{ query }}\r\n\r\nSto cercando di decidere cosa\
+      \ significhi \"{{\"@placeholder\"}}\" nel testo precedente.\r\nAiuta scegliendo\
+      \ un'opzione tra:\r\n- {{ entities | join(\"\\n- \") }}\r\n||| {% if ( answers\
+      \ | length ) > 0 %}\r\n{{ answers | choice }}\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Squad
+      original_task: true
+    name: trying_to_decide
+    reference: ''
+  super_glue_rte_GPT-3 style: !Template
+    answer_choices: True ||| False
+    id: 8fb1c6aa-20e9-438c-bece-c6af1c746449
+    jinja: "\r\n{{premise}}\r\n\r\nDomanda: {{hypothesis}} Vero o Falso? ||| {% if\
+      \ label != -1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3 style
+    reference: Same as reported in Figure G31 of the GPT-3 paper.
+  super_glue_rte_MNLI crowdsource: !Template
+    answer_choices: Yes ||| No
+    id: 2b52a83c-0021-41fe-b44c-5aaa076d71a2
+    jinja: "\r\n{{premise}} Usando solo a descrizione qui sopra e ci\xC3\xB2 che sai\
+      \ riguardo al mondo, \"{{hypothesis}}\" \xC3\xA8 sicuramente vero? S\xC3\xAC\
+      \ o no? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: MNLI crowdsource
+    reference: Adapted from Williams et al. 2018's instructions to crowdsourcing workers.
+  super_glue_rte_based on the previous passage: !Template
+    answer_choices: Yes ||| No
+    id: ed1f4b75-8826-4852-9bd6-aedf368678f5
+    jinja: "\r\n{{premise}} Basandosi sul passaggio precedente, \xC3\xA8 vero che\
+      \ \"{{hypothesis}}\"? S\xC3\xAC o no? ||| {% if label != -1 %}{{ answer_choices[label]\
+      \ }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based on the previous passage
+    reference: "Adapted from the BoolQ prompts in Schick & Sch\xFCtze 2021."
+  super_glue_rte_can we infer: !Template
+    answer_choices: Yes ||| No
+    id: 4163e6f1-1a83-4c73-b867-02eb7ac80316
+    jinja: "\r\nSupponi {{premise}} Possiamo concludere che \"{{hypothesis}}\"? S\xC3\
+      \xAC o no? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: can we infer
+    reference: Webson & Pavlick 2021
+  super_glue_rte_does it follow that: !Template
+    answer_choices: Yes ||| No
+    id: e2fb58f2-b1f2-4aef-b74b-c4ee1c571fff
+    jinja: "\r\nDato che {{premise}} Segue che {{hypothesis}} S\xC3\xAC o no? |||\
+      \ {% if label != -1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does it follow that
+    reference: Sanh et al. 2021
+  super_glue_rte_does this imply: !Template
+    answer_choices: Yes ||| No
+    id: 9e078fb4-505b-413c-bb5e-3cd16ddcf5d7
+    jinja: "\r\n{{premise}} \r\n\r\n\r\n\r\nDomanda: Questo implica che \"{{hypothesis}}\"\
+      ? S\xC3\xAC o no? ||| {% if label != -1 %}{{answer_choices[label]}}{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does this imply
+    reference: Sanh et al. 2021
+  super_glue_rte_guaranteed true: !Template
+    answer_choices: Yes ||| No
+    id: 2d0d63da-ffcf-4f6e-941a-b8da922be43e
+    jinja: "\r\nDato {{premise}} \xC3\u02C6 sicuramente vero che \"{{hypothesis}}\"\
+      ? S\xC3\xAC o no? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: guaranteed true
+    reference: Webson & Pavlick 2021
+  super_glue_rte_justified in saying: !Template
+    answer_choices: Yes ||| No
+    id: ee0ce095-122a-4509-bf0b-33d1495295f7
+    jinja: "\r\n{{premise}} Siamo giustificati nel dire che \"{{hypothesis}}\"? S\xC3\
+      \xAC o no? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: justified in saying
+    reference: Webson & Pavlick 2021
+  super_glue_rte_must be true: !Template
+    answer_choices: Yes ||| No
+    id: fb4f8144-37f5-4977-88da-37a5d0bfd0e8
+    jinja: "\r\nDato che {{premise}} Perci\xC3\xB2, deve essere vero che \"{{hypothesis}}\"\
+      ? S\xC3\xAC o no? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: must be true
+    reference: Sanh et al. 2021
+  super_glue_rte_should assume: !Template
+    answer_choices: Yes ||| No
+    id: b8dc85c6-28b6-4340-979a-8e77c2a0dde8
+    jinja: "\r\nDato {{premise}} Possiamo assumere che sia vero \"{{hypothesis}}\"\
+      ? S\xC3\xAC o no? ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: should assume
+    reference: Webson & Pavlick 2021
+  super_glue_wic_GPT-3-prompt: !Template
+    answer_choices: No ||| Yes
+    id: c3a0a5d8-cfe9-4a7f-8a3c-3c526e0ad0c6
+    jinja: "\r\n{{sentence1}}\r\n\r\n{{sentence2}}\r\n\r\nDomanda: La parola '{{word}}'\
+      \ \xC3\xA8 usata nello stesso modo nelle due frasi qui sopra?\r\n\r\n||| {%\
+      \ if label != -1%}\r\n\r\n{{answer_choices[label]}}\r\n\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf
+  super_glue_wic_GPT-3-prompt-with-label: !Template
+    answer_choices: No ||| Yes
+    id: d9e1db2a-ab0b-4621-bb41-01d5788d3873
+    jinja: "\r\n{{sentence1}}\r\n\r\n{{sentence2}}\r\n\r\nDomanda: La parola '{{word}}'\
+      \ \xC3\xA8 usata nello stesso modo nelle due frasi qui sopra? S\xC3\xAC, No?\r\
+      \n\r\n||| {% if label != -1%}\r\n\r\n{{answer_choices[label]}}\r\n\r\n{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3-prompt-with-label
+    reference: Following table G32. https://arxiv.org/pdf/2005.14165.pdf add additional
+      label
+  super_glue_wic_affirmation_true_or_false: !Template
+    answer_choices: False ||| True
+    id: 725b5ed0-7728-4890-95a4-a74cb7ae1bb4
+    jinja: "\r\nFrase A: {{sentence1}}\r\n\r\nFrase B: {{sentence2}}\r\n\r\n\r\n\r\
+      \n\"{{word}}\" ha un significato simile nelle frasi A e B. Vero o Falso?\r\n\
+      \r\n||| {% if label != -1%}\r\n\r\n{{answer_choices[label]}}\r\n\r\n{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: affirmation_true_or_false
+    reference: ''
+  super_glue_wic_grammar_homework: !Template
+    answer_choices: No ||| Yes
+    id: 611d13dc-d414-4b9b-9204-e4f325e859e7
+    jinja: "\r\nCompito\r\n\r\n\r\n\r\nDecidi se la parola \"{{word}}\" \xC3\xA8 usata\
+      \ con lo stesso significato nelle due frasi qui sotto. Rispondi con s\xC3\xAC\
+      \ o no.\r\n\r\n{{sentence1}}\r\n\r\n{{sentence2}}\r\n\r\n||| {% if label !=\
+      \ -1%}\r\n\r\n{{answer_choices[label]}}\r\n\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: grammar_homework
+    reference: ''
+  super_glue_wic_polysemous: !Template
+    answer_choices: No ||| Yes
+    id: dd2080cf-3117-49ba-9aff-c988a21fdb69
+    jinja: "\r\nLa parola \"{{word}}\" ha pi\xC3\xB9 significati. Ha lo stesso significato\
+      \ nelle frasi 1 e 2? S\xC3\xAC o no?\r\n\r\n\r\n\r\nFrase 1: {{sentence1}}\r\
+      \n\r\nFrase 2: {{sentence2}}\r\n\r\n||| {% if label != -1%}\r\n\r\n{{answer_choices[label]}}\r\
+      \n\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: polysemous
+    reference: ''
+  super_glue_wic_question-context: !Template
+    answer_choices: No ||| Yes
+    id: cfbc1637-10b8-4f20-a31c-55292f3cebd0
+    jinja: "\r\nDetermina se la parola '{{word}}' \xC3\xA8 usata nello stesso modo\
+      \ in entrambe le frasi qui sotto. \r\n\r\n{{sentence1}}\r\n\r\n{{sentence2}}\r\
+      \n\r\n||| {% if label != -1%}\r\n\r\n{{answer_choices[label]}}\r\n\r\n{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context
+    reference: Generalized question-context format
+  super_glue_wic_question-context-meaning: !Template
+    answer_choices: No ||| Yes
+    id: 3503ead5-4fa5-4f77-95dc-f0c2ed3eecdc
+    jinja: "\r\nla parola \"{{word}}\" ha lo stesso significato in queste due frasi?\r\
+      \n\r\n{{sentence1}}\r\n\r\n{{sentence2}}\r\n\r\n||| {% if label != -1%}\r\n\r\
+      \n{{answer_choices[label]}}\r\n\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning
+    reference: Generalized question-context format
+  super_glue_wic_question-context-meaning-with-label: !Template
+    answer_choices: No ||| Yes
+    id: 14e73f39-a0d1-44c2-b9a4-4e48f9f1608e
+    jinja: "\r\nLa parola \"{{word}}\" ha lo stesso significato in queste due frasi?\
+      \ S\xC3\xAC, No?\r\n\r\n{{sentence1}}\r\n\r\n{{sentence2}}\r\n\r\n||| {% if\
+      \ label != -1%}\r\n\r\n{{answer_choices[label]}}\r\n\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: question-context-meaning-with-label
+    reference: Generalized question-context format with label
+  super_glue_wic_same_sense: !Template
+    answer_choices: No ||| Yes
+    id: ce8b5a93-1841-4897-84db-b100f1c84f4b
+    jinja: "\r\nFrase 1: {{sentence1}}\r\n\r\nFrase 2: {{sentence2}}\r\n\r\n\r\n\r\
+      \nDetermina se la parola \"{{word}}\" \xC3\xA8 usata nello stesso modo in entrambe\
+      \ le frasi. S\xC3\xAC o no?\r\n\r\n||| {% if label != -1%}\r\n\r\n{{answer_choices[label]}}\r\
+      \n\r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: same_sense
+    reference: ''
+  super_glue_wic_similar-sense: !Template
+    answer_choices: No ||| Yes
+    id: f934a96d-fe4d-4075-aa47-5595b9a604c7
+    jinja: "\r\n{{sentence1}}\r\n\r\n{{sentence2}}\r\n\r\n{{word}} ha un significato\
+      \ simile?\r\n\r\n||| {% if label != -1%}\r\n\r\n{{answer_choices[label]}}\r\n\
+      \r\n{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: similar-sense
+    reference: Following https://arxiv.org/abs/2105.11447, https://github.com/ethanjperez/true_few_shot/tree/main/templates.super_glue
+  super_glue_wsc.fixed_GPT-3 Style: !Template
+    answer_choices: No ||| Yes
+    id: 7d377293-d043-4b6c-8ec1-d61eaf14ec67
+    jinja: "\r\nPassaggio: {{ text }} \r\n\r\n\r\n\r\nDomanda: Nel passaggio qui sopra,\
+      \ il pronome \"{{ span2_text }}\" si riferisce a {{ span1_text }}?\r\n\r\n\r\
+      \n\r\nRisposta: ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif\
+      \ %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: GPT-3 Style
+    reference: Adapted from Figure G33, p. 59, Brown et al. 2020
+  super_glue_wsc.fixed_I think they mean: !Template
+    answer_choices: No ||| Yes
+    id: 4b3e29cc-ccb8-4e4c-a845-4935ca29cf34
+    jinja: "\r\n{{ text }} Penso si intenda \"{{ text.split(\" \")[span2_index:] |\
+      \ join(\" \") | replace(span2_text, span1_text) }}\" S\xC3\xAC o no? ||| {%\
+      \ if label != -1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: I think they mean
+    reference: ''
+  super_glue_wsc.fixed_Who or what is/are: !Template
+    answer_choices: No ||| Yes
+    id: d88f3e21-42dc-49a5-924d-69b764a14816
+    jinja: "\r\n{{ text }} \r\n\r\n{% if span2_text.lower()  == \"loro\" %}\r\n\r\n\
+      Domanda: Chi o cosa sono \"{{ span2_text.lower() }}\"? {{ span1_text }}?\r\n\
+      \r\n{% else %}\r\n\r\nDomanda: Chi o cosa \xC3\xA8 \"{{ span2_text.lower() }}\"\
+      ? \xC3\u02C6 {{ span1_text }}?\r\n\r\n{% endif %}\r\n\r\nRisposta: ||| {% if\
+      \ label != -1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: Who or what is/are
+    reference: I double checked the only plural pronouns in WSC are "they" and "them".
+  super_glue_wsc.fixed_by p they mean: !Template
+    answer_choices: No ||| Yes
+    id: 23361c5d-b67f-4c2a-9da7-16301c55d0e1
+    jinja: "\r\n{{ text }} Qui, per \"{{ span2_text }}\" si intende \"{{ span1_text\
+      \ }}\". S\xC3\xAC o no? ||| {% if label != -1 %}{{ answer_choices[label] }}{%\
+      \ endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: by p they mean
+    reference: ''
+  super_glue_wsc.fixed_does p stand for: !Template
+    answer_choices: No ||| Yes
+    id: 7482d24f-cf45-4013-b82d-369489fc958b
+    jinja: "\r\n{{ text }} Qui \"{{ span2_text.lower() }}\" sta per {{ span1_text\
+      \ }}? S\xC3\xAC o no? ||| {% if label != -1 %}{{ answer_choices[label] }}{%\
+      \ endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does p stand for
+    reference: ''
+  super_glue_wsc.fixed_does the pronoun refer to: !Template
+    answer_choices: No ||| Yes
+    id: 212fb8b1-8436-4f64-8f37-a9094fe029f4
+    jinja: "\r\n{{ text }} Nella frase precedente, il pronome \"{{ span2_text.lower()\
+      \ }}\" si riferisce a {{ span1_text }}? S\xC3\xAC o no? ||| {% if label != -1\
+      \ %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: does the pronoun refer to
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  super_glue_wsc.fixed_in other words: !Template
+    answer_choices: False ||| True
+    id: 2f17f18b-6daa-44ef-a2dd-dddaf04aec0e
+    jinja: "\r\n{{ text }} \r\n\r\n\r\n\r\nIn altre parole, {{ text.split(\" \")[span2_index:]\
+      \ | join(\" \") | replace(span2_text, span1_text) }} Vero o falso? ||| {% if\
+      \ label != -1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: in other words
+    reference: ''
+  super_glue_wsc.fixed_p is/are r: !Template
+    answer_choices: False ||| True
+    id: 87f97aa0-1fa9-4f0b-b8e6-89d3c1f19bd6
+    jinja: "\r\nContesto: {{ text }} \r\n\r\n\r\n\r\n{% if span2_text.lower()  ==\
+      \ \"loro\" %}\r\n\r\nDomanda: con \"{{ span2_text }}\" si intende {{ span1_text\
+      \ }}. Vero o falso?\r\n\r\n{% else %}\r\n\r\nDomanda: con \"{{ span2_text }}\"\
+      \ si intende {{ span1_text }}. Vero o falso?\r\n\r\n{% endif %}\r\n\r\n\r\n\r\
+      \nRisposta: ||| {% if label != -1 %}{{ answer_choices[label] }}{% endif %}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: p is/are r
+    reference: ''
+  super_glue_wsc.fixed_replaced with: !Template
+    answer_choices: No ||| Yes
+    id: 809eacd0-2f6c-4e3a-b52a-57c783879d36
+    jinja: "\r\n{{ text }} Nella frase precedente, il pronome \"{{ span2_text }}\"\
+      \ pu\xC3\xB2 essere rimpiazzato con \"{{ span1_text }}\"? S\xC3\xAC o no? |||\
+      \ {% if label != -1 %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: replaced with
+    reference: ''
+  super_glue_wsc.fixed_the pronoun refers to: !Template
+    answer_choices: False ||| True
+    id: aae24b54-c3a7-4f69-8b77-f6dc115988f8
+    jinja: "\r\n{{ text }} \r\n\r\nNel passaggio qui sopra, il pronome \"{{ span2_text\
+      \ }}\" si riferisce a {{ span1_text }}. Vero o falso? ||| {% if label != -1\
+      \ %}{{ answer_choices[label] }}{% endif %}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: the pronoun refers to
+    reference: "Adapted from Perez et al. 2021 and Schick & Sch\xFCtz 2021."
+  wiki_hop_original_choose_best_object_affirmative_1: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: 4836e754-b2c9-4697-b386-6770494dc5f5
+    jinja: "Informazioni:\r\n{% for support in supports %}\r\n- {{ support }}\r\n\
+      {% endfor %}\r\n\r\n{% set question_split = question.split(' ') %}\r\nDate le\
+      \ informazioni in alto, scegli dalla lista sotto l'oggetto entit\xE0 che esibisce\
+      \ la relazione '{{ question_split[0] | replace(\"_\", \" \")}}' con il soggetto\
+      \ '{{ question_split[1:] | join(\" \")}}'.\r\n\r\nScelte:\r\n- {{answer_choices\
+      \ | join(\"\\n - \") }}\r\n\r\n|||\r\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_affirmative_1
+    reference: Given information and subject and relation, choose the best object
+      entity (affirmative instruction).
+  wiki_hop_original_choose_best_object_affirmative_2: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: e4dc7abf-d56a-4217-ba7f-7470cd959e8e
+    jinja: "Informazioni:\r\n{% for support in supports %}\r\n- {{ support }}\r\n\
+      {% endfor %}\r\n\r\n{% set question_split = question.split(' ') %}\r\nDopo aver\
+      \ letto i paragrafi in alto, scegli l'entit\xE0 che \xE8 pi\xF9 legata a '{{\
+      \ question_split[1:] | join(\" \")}}' con la relazione di '{{ question_split[0]\
+      \ | replace(\"_\", \" \")}}'.\r\n\r\nScelte:\r\n- {{answer_choices | join(\"\
+      \\n - \") }}\r\n\r\n|||\r\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_affirmative_2
+    reference: Given information and subject and relation, choose the best object
+      entity (affirmative instruction).
+  wiki_hop_original_choose_best_object_affirmative_3: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: 4a1b61f6-c619-4d3d-aec2-f41a8986641c
+    jinja: "Informazioni:\r\n{% for support in supports %}\r\n- {{ support }}\r\n\
+      {% endfor %}\r\n\r\n{% set question_split = question.split(' ') %}\r\nDopo aver\
+      \ letto il paragrafo in alto, siamo interessati a conoscere l'entit\xE0 con\
+      \ la quale '{{ question_split[1:] | join(\" \")}}' esibisce una relazione di\
+      \ '{{ question_split[0] | replace(\"_\", \" \")}}'. Trova la risposta dalle\
+      \ scelte in basso.\r\n\r\nScelte:\r\n- {{answer_choices | join(\"\\n - \") }}\r\
+      \n\r\n|||\r\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_affirmative_3
+    reference: Given information and subject and relation, choose the best object
+      entity (affirmative instruction).
+  wiki_hop_original_choose_best_object_interrogative_1: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: 0bb6b603-115e-4ae9-b17b-881fa72b2e81
+    jinja: "Informazioni:\r\n{% for support in supports %}\r\n- {{ support }}\r\n\
+      {% endfor %}\r\n\r\n{% set question_split = question.split(' ') %}\r\nQuale\
+      \ oggetto entit\xE0 ha la relazione di '{{ question_split[0] | replace(\"_\"\
+      , \" \")}}' con il soggetto '{{ question_split[1:] | join(\" \")}}'? \r\n\r\n\
+      Scelte:\r\n- {{answer_choices | join(\"\\n - \") }}\r\n\r\n|||\r\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_interrogative_1
+    reference: Given information and subject and relation, choose the best object
+      entity (interrogative instruction).
+  wiki_hop_original_choose_best_object_interrogative_2: !Template
+    answer_choices: '{{candidates | join("|||")}}'
+    id: f44936e1-cbde-4d41-b462-6150cce8c1c8
+    jinja: "Informazioni:\r\n{% for support in supports %}\r\n- {{ support }}\r\n\
+      {% endfor %}\r\n\r\n{% set question_split = question.split(' ') %}\r\n'{{ question_split[1:]\
+      \ | join(\" \")}}' \xE8 legato a quale entit\xE0 oggetto con la relazione di\
+      \ '{{ question_split[0] | replace(\"_\", \" \")}}'?\r\n\r\nScelte:\r\n- {{answer_choices\
+      \ | join(\"\\n - \") }}\r\n\r\n|||\r\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: choose_best_object_interrogative_2
+    reference: Given information and subject and relation, choose the best object
+      entity (interrogative instruction).
+  wiki_hop_original_explain_relation: !Template
+    answer_choices: null
+    id: 23e0d05a-8777-45c4-8692-13f3dc5a40bb
+    jinja: "Informazioni:\r\n{% for support in supports %}\r\n- {{ support }}\r\n\
+      {% endfor %}\r\n\r\n{% set question_split = question.split(' ') %}\r\nQual \xE8\
+      \ la relazione tra '{{ question_split[1:] | join(\" \")}}' e '{{answer}}'?\r\
+      \n\r\n|||\r\n{{ question_split[0] | replace(\"_\", \" \") }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: false
+    name: explain_relation
+    reference: Given information, explain the relation between the subject entity
+      and the object entity.
+  wiki_hop_original_generate_object: !Template
+    answer_choices: null
+    id: 2fadafea-f814-4ff1-a3aa-cace9067f31f
+    jinja: "Informazioni:\r\n{% for support in supports %}\r\n- {{ support }}\r\n\
+      {% endfor %}\r\n\r\n{% set question_split = question.split(' ') %}\r\nCon quale\
+      \ entit\xE0 '{{ question_split[1:] | join(\" \")}}' ha la relazione '{{ question_split[0]\
+      \ | replace(\"_\", \" \") }}'?\r\n\r\n|||\r\n{{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_object
+    reference: Given information, generate the best object entity (without answer
+      choices in prompt).
+  wiki_hop_original_generate_subject: !Template
+    answer_choices: null
+    id: 40bdb0e7-def9-4829-9a37-a05d354ef7cd
+    jinja: "Informazioni:\r\n{% for support in supports %}\r\n- {{ support }}\r\n\
+      {% endfor %}\r\n\r\n{% set question_split = question.split(' ') %}\r\nDato il\
+      \ paragrafo in alto, decidi quale entit\xE0 ha la relazione '{{ question_split[0]\
+      \ | replace(\"_\", \" \") }}' con '{{answer}}'.\r\n\r\n|||\r\n{{ question_split[1:]\
+      \ | join(\" \")}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_subject
+    reference: Given information, generate the best subject entity for the fact triple.
+  wiki_hop_original_generate_subject_and_object: !Template
+    answer_choices: null
+    id: c4675106-0ac5-4bf0-a400-f628daae81db
+    jinja: "Informazioni:\r\n{% for support in supports %}\r\n- {{ support }}\r\n\
+      {% endfor %}\r\n\r\n{% set question_split = question.split(' ') %}\r\nDate le\
+      \ informazioni, scegli le entit\xE0 soggetto e oggetto che hanno la relazione\
+      \ di '{{ question_split[0] | replace(\"_\", \" \") }}'.\r\n\r\n|||\r\n{{ question_split[1:]\
+      \ | join(\" \") }} , {{answer}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: false
+    name: generate_subject_and_object
+    reference: Given information and relation, generate the subject and object.
+  xsum_DOC_boils_down_to_simple_idea_that: !Template
+    answer_choices: null
+    id: 57a7a3f1-91f8-4f4b-b72d-745d7cb7b1e3
+    jinja: "\r\n{{document}}\r\n\r\nSi riduce alla semplice idea che ||| {{summary}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_boils_down_to_simple_idea_that
+    reference: http://gptprompts.wikidot.com/prompt:summarization
+  xsum_DOC_given_above_write_one_sentence: !Template
+    answer_choices: null
+    id: 826ffcd4-c0e6-4f4c-bd9a-fcf8ee169ede
+    jinja: "\r\n{{document}}\r\n\r\n\r\n\r\n===\r\n\r\n\r\n\r\nDato il documento qui\
+      \ sopra, scrivi una frase per riassumere: ||| {{summary}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_given_above_write_one_sentence
+    reference: ''
+  xsum_DOC_how_would_you_rephrase_few_words: !Template
+    answer_choices: null
+    id: 3d388a1e-3361-407b-baa7-61397cc58382
+    jinja: "\r\n{{document}}\r\n\r\nCome lo riscriveresti in poche parole? ||| {{summary}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_how_would_you_rephrase_few_words
+    reference: http://gptprompts.wikidot.com/prompt:summarization
+  xsum_DOC_tldr: !Template
+    answer_choices: null
+    id: d878b768-9da2-4d9d-9517-1edcca3b1b26
+    jinja: "\r\n{{document}}\r\n\r\n\r\n\r\nTL;DR: ||| {{summary}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_tldr
+    reference: GPT-2 TLDR
+  xsum_DOC_write_summary_of_above: !Template
+    answer_choices: null
+    id: 13c02904-e4e2-4b4f-b115-44b437d22041
+    jinja: "\r\n{{document}}\r\n\r\n\r\n\r\n===\r\n\r\n\r\n\r\nScrivi un riassunto\
+      \ del testo qui sopra : ||| {{summary}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: DOC_write_summary_of_above
+    reference: ''
+  xsum_article_DOC_summary: !Template
+    answer_choices: null
+    id: 30292806-8e58-463c-8d92-ba525411c6fa
+    jinja: "\r\nArticolo: {{document}}\r\n\r\n\r\n\r\nRiassunto: ||| {{summary}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: article_DOC_summary
+    reference: Prefix-Tuning
+  xsum_college_roommate_asked_DOC_so_I_recap: !Template
+    answer_choices: null
+    id: 4cfe4126-b9f5-44eb-8a98-973987c5f32e
+    jinja: "\r\nIl mio compagno di stanza del college mi ha chiesto cosa dice questo\
+      \ articolo:\r\n\r\n\r\n\r\n{{document}}\r\n\r\n\r\n\r\nQuindi l'ho riassunto\
+      \ in termini semplici: ||| {{summary}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: college_roommate_asked_DOC_so_I_recap
+    reference: http://gptprompts.wikidot.com/prompt:summarization
+  xsum_read_below_DOC_write_abstract: !Template
+    answer_choices: null
+    id: 9a3f617f-628f-4fa5-9b74-47d0b166a487
+    jinja: "\r\nPrima, per favore, leggi l'articolo qui sotto.\r\n\r\n\r\n\r\n{{document}}\r\
+      \n\r\n\r\n\r\nOra puoi scrivermi un compendio di ci\xC3\xB2?  ||| {{summary}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: read_below_DOC_write_abstract
+    reference: ''
+  xsum_summarize_DOC: !Template
+    answer_choices: null
+    id: 65a3c419-57e9-48c2-b090-0c5d7adb23c6
+    jinja: "\r\nRiassumi: {{document}}|||\r\n\r\n{{summary}}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: summarize_DOC
+    reference: ''
+  xsum_summarize_this_DOC_summary: !Template
+    answer_choices: null
+    id: 752fda48-e64c-47a7-8342-17c2c113f600
+    jinja: "\r\nRiassumi questo documento: {{document}}\r\n\r\nRiassunto: ||| {{summary}}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: summarize_this_DOC_summary
+    reference: ''
+  yelp_review_full_based_on_that: !Template
+    answer_choices: 1 star ||| 2 stars ||| 3 stars ||| 4 stars ||| 5 stars
+    id: 27b6bc81-bb1c-467b-91c0-22a4d6a19f44
+    jinja: "\r\n{{ text }}\r\n===\r\nBasandomi su questo, il mio voto \xC3\xA8 |||\
+      \ {{ answer_choices[label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: based_on_that
+    reference: ''
+  yelp_review_full_format_rating: !Template
+    answer_choices: 1 star ||| 2 stars ||| 3 stars ||| 4 stars ||| 5 stars
+    id: e8091beb-c0fa-490d-9e0c-32eb6907dbc0
+    jinja: "\r\nTesto della recensione:\r\n{{ text }}\r\n\r\nPunteggio della recensione:\
+      \ |||\r\n{{ answer_choices[label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_rating
+    reference: It's simulating the format of a webpage.
+  yelp_review_full_format_score: !Template
+    answer_choices: 1 ||| 2 ||| 3 ||| 4 ||| 5
+    id: 4dd990b3-7201-4cba-bb9a-baa462d68b1a
+    jinja: "\r\nTesto della recensione:\r\n{{ text }}\r\n\r\nPunteggio della recensione\
+      \ (tra 1 e 5): |||\r\n{{ answer_choices[label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_score
+    reference: Simulating webpage
+  yelp_review_full_format_star: !Template
+    answer_choices: 1 star ||| 2 stars ||| 3 stars ||| 4 stars ||| 5 stars
+    id: 29fc6386-90b3-4976-b249-26e49fe7c924
+    jinja: "\r\nRecensisci il testo:\r\n{{ text }}\r\n\r\nProtagonisti: |||\r\n{{\
+      \ answer_choices[label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: format_star
+    reference: simulating webpage
+  yelp_review_full_on_a_scale: !Template
+    answer_choices: 1 ||| 2 ||| 3 ||| 4 ||| 5
+    id: 6d4bfb59-4260-40a5-9da5-e061720bd430
+    jinja: "\r\nRecensione: {{text}}\r\nIn una scala da 1 a 5, a questo prodotto darei\
+      \ ||| {{ answer_choices[label] }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: on_a_scale
+    reference: ''
+  yelp_review_full_so_i_would: !Template
+    answer_choices: 1 star ||| 2 stars ||| 3 stars ||| 4 stars ||| 5 stars
+    id: 135fcd11-9fcc-4b55-bf1b-9b76290d0f6b
+    jinja: "\r\n{{ text }}\r\nQuindi vorrei dargli ||| {{ answer_choices[label] }}\r\
+      \n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: so_i_would
+    reference: ''
+  yelp_review_full_this_place: !Template
+    answer_choices: 1 star ||| 2 stars ||| 3 stars ||| 4 stars ||| 5 stars
+    id: 2a57af86-e25a-4572-ba9e-aa921842c04b
+    jinja: "\r\n{{ text }} Il mio voto per questo posto \xC3\xA8 ||| {{ answer_choices[label]\
+      \ }}\r\n"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - it
+      metrics:
+      - Accuracy
+      original_task: true
+    name: this_place
+    reference: ''
