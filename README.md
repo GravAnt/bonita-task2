@@ -1,5 +1,5 @@
 # bonita-task2a
-This is the repository for the task 2a of Bonito. The file `translations.yaml` contains all the 323 transalted meta-templates, each one following its original structure.
+This is the repository for the task 2a of Bonito. The file `translations.yaml` contains all the 323 translated meta-templates, each one following its original structure.
 
 Steps:
 1. Gather the meta-templates
